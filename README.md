@@ -1,3 +1,0 @@
-# TextAdventure
-
-testiä
