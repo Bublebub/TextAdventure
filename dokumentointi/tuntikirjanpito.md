@@ -2,3 +2,6 @@
 
 ##3.9.2015
 *dokumentointi* kansion lisäyksessä kaikki tiedostot poistuivat(en tiedä miksi), joten palauttelin tiedostoja muutamaan otteeseen, jonka takia muokkauksia näkyy niin monta. Aikaa meni noin 20 min.
+
+##7.9.2015
+*Room* ja *FileReader* luokat lisätty, aikaa meni n. 30 min.
