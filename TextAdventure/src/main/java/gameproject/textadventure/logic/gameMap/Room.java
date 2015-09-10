@@ -23,22 +23,22 @@ public class Room {
     
     
     
-    // Sets room as East neigbour
+    // Sets rooms East neigbour
     public void setEast(Room neighbour) {
         this.east = neighbour;
     }
     
-    // Sets room as West neigbour
+    // Sets rooms West neigbour
     public void setWest(Room neighbour) {
         this.west = neighbour;
     }
     
-    // Sets room as South neigbour
+    // Sets rooms South neigbour
     public void setSouth(Room neighbour) {
         this.south = neighbour;
     }
     
-    // Sets room as North neigbour
+    // Sets rooms North neigbour
     public void setNorth(Room neighbour) {
         this.north = neighbour;
     }

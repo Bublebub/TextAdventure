@@ -10,7 +10,7 @@ public class AreaBuilder {
     
     Map<String, Room> gameMap;
     int roomAmount;
-    RoomDataReader roomData;
+    RoomDataReader roomDataReader;
     
     // Constructor is given the amount of rooms in the map
     public AreaBuilder(int rooms) {
@@ -18,16 +18,20 @@ public class AreaBuilder {
         this.roomAmount = rooms;
     }
     
+    
+    // Builds the games area
     public void buildArea() throws Exception {
         createEmptyMap();
         
         for (String id : this.gameMap.keySet()) {
-            this.roomData = new RoomDataReader("src/main/java/gameproject/textadventure/logic/gameMap/roomData/" + id + ".txt");
+            this.roomDataReader = new RoomDataReader("src/main/java/gameproject/textadventure/logic/gameMap/roomData/" + id + ".txt");
             
             Room currentRoom = this.gameMap.get(id);
-            
+            this.roomDataReader.assignRoomNeighbours(currentRoom);
+            this.roomDataReader.assignDescription(currentRoom);
         }
     }
+    
     
     // Creates a map with empty rooms
     public void createEmptyMap() {
@@ -35,7 +39,6 @@ public class AreaBuilder {
             this.gameMap.put("R" + i, new Room());
         }
     }
-    
     
     
     
