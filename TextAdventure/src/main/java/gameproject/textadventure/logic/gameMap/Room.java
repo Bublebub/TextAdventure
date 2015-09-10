@@ -1,5 +1,5 @@
 
-package gameproject.textadventure.logic.GameMap;
+package gameproject.textadventure.logic.gameMap;
 
 
 // This class creates rooms where player can/can't go

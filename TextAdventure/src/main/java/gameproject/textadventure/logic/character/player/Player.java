@@ -1,7 +1,7 @@
 
 package gameproject.textadventure.logic.character.player;
 
-import gameproject.textadventure.logic.gamemap.Room;
+import gameproject.textadventure.logic.gameMap.Room;
 
 
 public class Player {
