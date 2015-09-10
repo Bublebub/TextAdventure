@@ -8,3 +8,4 @@
 
 ##10.9.2015
 *Player* luokka ja *Item* rajapinta lisätty, aikaa meni n. 30 min.
+*AreaBuilder* ja *RoomDataReader* luokat lisätty, myös muutama "testihuone" kansiossa *roomData*. Aikaa kului n. tunti.
