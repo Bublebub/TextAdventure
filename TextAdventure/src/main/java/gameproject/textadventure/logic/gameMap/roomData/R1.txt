@@ -1,0 +1,6 @@
+East: Wall
+West: R0
+South: R4
+North: Wall
+
+Description: It's better over here

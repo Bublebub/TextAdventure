@@ -1,0 +1,6 @@
+East: R3
+West: Wall
+South: Wall
+North: R0
+
+Description: It's shiny out here
