@@ -5,3 +5,6 @@
 
 ##7.9.2015
 *Room* ja *FileReader* luokat lisätty, aikaa meni n. 30 min.
+
+##10.9.2015
+*Player* luokka ja *Item* rajapinta lisätty, aikaa meni n. 30 min.
