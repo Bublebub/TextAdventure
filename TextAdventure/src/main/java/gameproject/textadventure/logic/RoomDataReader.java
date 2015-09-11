@@ -17,23 +17,39 @@ public class RoomDataReader {
     }
     
     // Assigns all rooms neighbours
-    public void assignRoomNeighbours(Room room) {
+    public void assignRoomNeighbours(Room room, Map<String, Room> map) {
         String wallOrRoom; // Used to check if side has a room/wall
         
         for (int i = 0; i < 4; i++) {
             String neighbour = this.scanner.next(); // Gets neighbours side (E, W, S, N)
             
             if (neighbour.equals("East:")) {
-                assignEastNeighbour(room, this.gameMap);
+                wallOrRoom = this.scanner.next();
+        
+                if (!wallOrRoom.equals("Wall")) {
+                    room.setEast(map.get(wallOrRoom));
+                }
                 
             } else if (neighbour.equals("West:")) {
-                assignWestNeighbour(room, this.gameMap);
+                wallOrRoom = this.scanner.next();
+        
+                if (!wallOrRoom.equals("Wall")) {
+                    room.setEast(map.get(wallOrRoom));
+                }
                 
             } else if (neighbour.equals("South:")) {
-                assignSouthNeighbour(room, this.gameMap);
+                wallOrRoom = this.scanner.next();
+        
+                if (!wallOrRoom.equals("Wall")) {
+                    room.setEast(map.get(wallOrRoom));
+                }
                 
             } else if (neighbour.equals("North:")) {
-                assignNorthNeighbour(room, this.gameMap);
+                wallOrRoom = this.scanner.next();
+        
+                if (!wallOrRoom.equals("Wall")) {
+                    room.setEast(map.get(wallOrRoom));
+                }
                 
             }
         }
@@ -42,45 +58,52 @@ public class RoomDataReader {
     
     //  Assigns rooms East neighbour (if it has one)
     public void assignEastNeighbour(Room room, Map<String, Room> map) {
-        if (!this.scanner.next().equals("Wall")) {
-            room.setEast(map.get(this.scanner.next()));
+        String wallOrRoom = this.scanner.next();
+        
+        if (!wallOrRoom.equals("Wall")) {
+            room.setEast(map.get(wallOrRoom));
         }
     }
     
     //  Assigns rooms West neighbour (if it has one)
     public void assignWestNeighbour(Room room, Map<String, Room> map) {
-        if (!this.scanner.next().equals("Wall")) {
-            room.setWest(map.get(this.scanner.next()));
+        String wallOrRoom = this.scanner.next();
+        
+        if (!wallOrRoom.equals("Wall")) {
+            room.setWest(map.get(wallOrRoom));
         }
     }
     
     //  Assigns rooms South neighbour (if it has one)
     public void assignSouthNeighbour(Room room, Map<String, Room> map) {
-        if (!this.scanner.next().equals("Wall")) {
-            room.setSouth(map.get(this.scanner.next()));
+        String wallOrRoom = this.scanner.next();
+        
+        if (!wallOrRoom.equals("Wall")) {
+            room.setSouth(map.get(wallOrRoom));
         }
     }
     
     //  Assigns rooms North neighbour (if it has one)
     public void assignNorthNeighbour(Room room, Map<String, Room> map) {
-        if (!this.scanner.next().equals("Wall")) {
-            room.setNorth(map.get(this.scanner.next()));
+        String wallOrRoom = this.scanner.next();
+        
+        if (!wallOrRoom.equals("Wall")) {
+            room.setNorth(map.get(wallOrRoom));
         }
     }
     
     
     // Assigns rooms description from file
     public void assignDescription(Room room) {
-        String description = "";
         
-        while (this.scanner.hasNext()) {
-            if (this.scanner.next().equals("Description:")) {
-                while (this.scanner.hasNextLine()) {
-                    description += this.scanner.nextLine();
-                }
+        if (this.scanner.next().equals("Description:")) {
+            String description = "";
+            
+            while (this.scanner.hasNextLine()) {
+                description += this.scanner.nextLine();
             }
+            
+            room.setDescription(description);
         }
-        
-        room.setDescription(description);
     }
 }

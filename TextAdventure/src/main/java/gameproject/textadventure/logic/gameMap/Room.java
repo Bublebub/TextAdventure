@@ -5,8 +5,7 @@ package gameproject.textadventure.logic.gameMap;
 // This class creates rooms where player can/can't go
 public class Room {
     // Each room knows its neighbours and has a specific description and ID
-    Room east;
-    Room west, south, north;
+    Room east, west, south, north;
     String description, id;
     
     //              -- Setters --

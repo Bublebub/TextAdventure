@@ -19,6 +19,45 @@ public class Player {
         this.currentLocation = start;
     }
     
+    //          -- Movement --
+    
+    public void moveEast() {
+        if (this.currentLocation.getEast() == null) {
+            System.out.println("Can't move there!");
+        } else {
+            this.currentLocation = this.currentLocation.getEast();
+            System.out.print(this.currentLocation.getDescription());
+        }
+    }
+    
+    public void moveWest() {
+        if (this.currentLocation.getWest() == null) {
+            System.out.println("Can't move there!");
+        } else {
+            this.currentLocation = this.currentLocation.getWest();
+            System.out.print(this.currentLocation.getDescription());
+        }
+    }
+    
+    public void moveSouth() {
+        if (this.currentLocation.getSouth() == null) {
+            System.out.println("Can't move there!");
+        } else {
+            this.currentLocation = this.currentLocation.getSouth();
+            System.out.print(this.currentLocation.getDescription());
+        }
+    }
+    
+    public void moveNorth() {
+        if (this.currentLocation.getNorth() == null) {
+            System.out.println("Can't move there!");
+        } else {
+            this.currentLocation = this.currentLocation.getNorth();
+            System.out.print(this.currentLocation.getDescription());
+        }
+    }
+    
+    
     
     //          -- Setters --
     

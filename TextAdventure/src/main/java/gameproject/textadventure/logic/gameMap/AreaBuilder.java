@@ -27,7 +27,7 @@ public class AreaBuilder {
             this.roomDataReader = new RoomDataReader("src/main/java/gameproject/textadventure/logic/gameMap/roomData/" + id + ".txt");
             
             Room currentRoom = this.gameMap.get(id);
-            this.roomDataReader.assignRoomNeighbours(currentRoom);
+            this.roomDataReader.assignRoomNeighbours(currentRoom, this.gameMap);
             this.roomDataReader.assignDescription(currentRoom);
         }
     }
