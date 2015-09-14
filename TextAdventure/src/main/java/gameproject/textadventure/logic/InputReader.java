@@ -16,7 +16,7 @@ public class InputReader {
         this.player = player;
         
         while (true) {
-            System.out.println("Command: ");
+            System.out.print("Command: ");
             this.scanner = new Scanner(System.in);
             
             String command = trimCommand(this.scanner.nextLine());

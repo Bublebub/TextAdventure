@@ -18,14 +18,15 @@ public class RoomDataReader {
     
     // Assigns all rooms neighbours
     public void assignRoomNeighbours(Room room, Map<String, Room> map) {
-        String wallOrRoom; // Used to check if side has a room/wall
+        
         
         for (int i = 0; i < 4; i++) {
             String neighbour = this.scanner.next(); // Gets neighbours side (E, W, S, N)
+            String wallOrRoom; // Used to check if side has a room/wall
             
             if (neighbour.equals("East:")) {
                 wallOrRoom = this.scanner.next();
-        
+                
                 if (!wallOrRoom.equals("Wall")) {
                     room.setEast(map.get(wallOrRoom));
                 }
@@ -52,43 +53,6 @@ public class RoomDataReader {
                 }
                 
             }
-        }
-    }
-    
-    
-    //  Assigns rooms East neighbour (if it has one)
-    public void assignEastNeighbour(Room room, Map<String, Room> map) {
-        String wallOrRoom = this.scanner.next();
-        
-        if (!wallOrRoom.equals("Wall")) {
-            room.setEast(map.get(wallOrRoom));
-        }
-    }
-    
-    //  Assigns rooms West neighbour (if it has one)
-    public void assignWestNeighbour(Room room, Map<String, Room> map) {
-        String wallOrRoom = this.scanner.next();
-        
-        if (!wallOrRoom.equals("Wall")) {
-            room.setWest(map.get(wallOrRoom));
-        }
-    }
-    
-    //  Assigns rooms South neighbour (if it has one)
-    public void assignSouthNeighbour(Room room, Map<String, Room> map) {
-        String wallOrRoom = this.scanner.next();
-        
-        if (!wallOrRoom.equals("Wall")) {
-            room.setSouth(map.get(wallOrRoom));
-        }
-    }
-    
-    //  Assigns rooms North neighbour (if it has one)
-    public void assignNorthNeighbour(Room room, Map<String, Room> map) {
-        String wallOrRoom = this.scanner.next();
-        
-        if (!wallOrRoom.equals("Wall")) {
-            room.setNorth(map.get(wallOrRoom));
         }
     }
     

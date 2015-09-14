@@ -26,17 +26,22 @@ public class AreaBuilder {
         for (String id : this.gameMap.keySet()) {
             this.roomDataReader = new RoomDataReader("src/main/java/gameproject/textadventure/logic/gameMap/roomData/" + id + ".txt");
             
+            
             Room currentRoom = this.gameMap.get(id);
+            
+            
             this.roomDataReader.assignRoomNeighbours(currentRoom, this.gameMap);
             this.roomDataReader.assignDescription(currentRoom);
+            
         }
     }
+        
     
     
     // Creates a map with empty rooms
     public void createEmptyMap() {
         for (int i = 0; i < this.roomAmount; i++) {
-            this.gameMap.put("R" + i, new Room());
+            this.gameMap.put("R" + i, new Room("R" + i));
         }
     }
     

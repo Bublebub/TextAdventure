@@ -8,6 +8,10 @@ public class Room {
     Room east, west, south, north;
     String description, id;
     
+    public Room(String id) {
+        this.id = id;
+    }
+    
     //              -- Setters --
     
     // Sets rooms ID
@@ -70,10 +74,11 @@ public class Room {
     public Room getSouth() {
         return this.south;
     }
-    
+   
     // Retrieves North neighbour
     public Room getNorth() {
         return this.north;
     }
+
     
 }
