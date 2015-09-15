@@ -33,6 +33,7 @@ public class AreaBuilder {
             this.roomDataReader.assignRoomNeighbours(currentRoom, this.gameMap);
             this.roomDataReader.assignDescription(currentRoom);
             
+            
         }
     }
         

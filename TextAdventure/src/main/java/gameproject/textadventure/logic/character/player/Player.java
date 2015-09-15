@@ -26,7 +26,7 @@ public class Player {
             System.out.println("Can't move there!");
         } else {
             this.currentLocation = this.currentLocation.getEast();
-            System.out.print(this.currentLocation.getDescription());
+            System.out.println(this.currentLocation.getDescription());
         }
     }
     
@@ -35,7 +35,7 @@ public class Player {
             System.out.println("Can't move there!");
         } else {
             this.currentLocation = this.currentLocation.getWest();
-            System.out.print(this.currentLocation.getDescription());
+            System.out.println(this.currentLocation.getDescription());
         }
     }
     
@@ -44,7 +44,7 @@ public class Player {
             System.out.println("Can't move there!");
         } else {
             this.currentLocation = this.currentLocation.getSouth();
-            System.out.print(this.currentLocation.getDescription());
+            System.out.println(this.currentLocation.getDescription());
         }
     }
     
@@ -53,7 +53,7 @@ public class Player {
             System.out.println("Can't move there!");
         } else {
             this.currentLocation = this.currentLocation.getNorth();
-            System.out.print(this.currentLocation.getDescription());
+            System.out.println(this.currentLocation.getDescription());
         }
     }
     

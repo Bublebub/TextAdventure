@@ -3,4 +3,4 @@ West: R2
 South: Wall
 North: R1
 
-Description: It's freezing over here
+Description: R3
