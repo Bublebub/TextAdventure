@@ -1,10 +1,10 @@
 #tuntikirjanpito
 
 ##3.9.2015
-*dokumentointi* kansion lisäyksessä kaikki tiedostot poistuivat(en tiedä miksi), joten palauttelin tiedostoja muutamaan otteeseen, jonka takia muokkauksia näkyy niin monta. Aikaa meni noin 20 min.
+*dokumentointi* kansion lisäyksessä kaikki tiedostot poistuivat(en tiedä miksi), joten palauttelin tiedostoja muutamaan otteeseen, jonka takia muokkauksia näkyy niin monta. Aikaa kului noin 20 min.
 
 ##7.9.2015
-*Room* ja *RoomDataReader* luokat lisätty, aikaa meni n. 30 min.
+*Room* ja *RoomDataReader* luokat lisätty, aikaa kului n. 30 min.
 
 ##10.9.2015
 *Player* luokka ja *Item* rajapinta lisätty, aikaa meni n. 30 min.
@@ -12,3 +12,6 @@
 
 ##11.9.2015
 *InputReader* luokka, pelin kartan rakentaminen, komentojen lukeminen ja luokkakaavio lisätty (loppupäivä meni bugien korjaamisen yrittämisessä, ei onnistunut...). Aikaa kului n. 7 tuntia.
+
+#15.9.2015
+Bugin metsästystä.. Aikaa kului n. tunti.
