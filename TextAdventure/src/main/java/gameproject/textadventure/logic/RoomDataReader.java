@@ -24,8 +24,12 @@ public class RoomDataReader {
             String neighbour = this.scanner.next(); // Gets neighbours side (E, W, S, N)
             String wallOrRoom; // Used to check if side has a room/wall
             
+            System.out.print(neighbour);
+            
             if (neighbour.equals("East:")) {
                 wallOrRoom = this.scanner.next();
+                
+                System.out.println(wallOrRoom);
                 
                 if (!wallOrRoom.equals("Wall")) {
                     room.setEast(map.get(wallOrRoom));
@@ -34,6 +38,8 @@ public class RoomDataReader {
             } else if (neighbour.equals("West:")) {
                 wallOrRoom = this.scanner.next();
         
+                System.out.println(wallOrRoom);
+                
                 if (!wallOrRoom.equals("Wall")) {
                     room.setEast(map.get(wallOrRoom));
                 }
@@ -41,6 +47,8 @@ public class RoomDataReader {
             } else if (neighbour.equals("South:")) {
                 wallOrRoom = this.scanner.next();
         
+                System.out.println(wallOrRoom);
+                
                 if (!wallOrRoom.equals("Wall")) {
                     room.setEast(map.get(wallOrRoom));
                 }
@@ -48,6 +56,8 @@ public class RoomDataReader {
             } else if (neighbour.equals("North:")) {
                 wallOrRoom = this.scanner.next();
         
+                System.out.println(wallOrRoom);
+                
                 if (!wallOrRoom.equals("Wall")) {
                     room.setEast(map.get(wallOrRoom));
                 }
