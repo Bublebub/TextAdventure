@@ -15,3 +15,6 @@
 
 #15.9.2015
 Bugin metsästystä.. Aikaa kului n. tunti.
+
+#16.9.2015
+Bugi korjattu, pelaaja pystyy nyt liikkumaan kartassa. Aikaa kului n. 10 min.
