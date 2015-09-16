@@ -3,4 +3,4 @@ West: R2
 South: Wall
 North: R1
 
-Description: R3
+Description: neljas

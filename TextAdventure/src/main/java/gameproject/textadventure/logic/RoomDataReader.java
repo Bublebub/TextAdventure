@@ -46,8 +46,9 @@ public class RoomDataReader {
                 
             } else if (neighbour.equals("North:")) {
                 wallOrRoom = this.scanner.next();
+                
                 if (!wallOrRoom.equals("Wall")) {
-                    room.setSouth(map.get(wallOrRoom));
+                    room.setNorth(map.get(wallOrRoom));
                 }
                 
             }

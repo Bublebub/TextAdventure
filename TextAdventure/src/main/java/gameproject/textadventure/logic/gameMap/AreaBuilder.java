@@ -24,6 +24,7 @@ public class AreaBuilder {
         createEmptyMap();
         
         for (String id : this.gameMap.keySet()) {
+            
             this.roomDataReader = new RoomDataReader("src/main/java/gameproject/textadventure/logic/gameMap/roomData/" + id + ".txt");
             
             
@@ -35,6 +36,7 @@ public class AreaBuilder {
             
             
         }
+        
     }
         
     
