@@ -1,12 +1,15 @@
 
 package gameproject.textadventure.logic.gameMap;
 
+import gameproject.textadventure.logic.character.enemies.Enemy;
+
 
 // This class creates rooms where player can/can't go
 public class Room {
     // Each room knows its neighbours and has a specific description and ID
     Room east, west, south, north;
     String description, id;
+    Enemy enemy;
     
     public Room(String id) {
         this.id = id;
@@ -22,6 +25,11 @@ public class Room {
     // Sets rooms description
     public void setDescription(String text) {
         this.description = text;
+    }
+    
+    // Sets an enemy in the room
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
     }
     
     
@@ -58,6 +66,10 @@ public class Room {
         return this.description;
     }
     
+    // Gets an enemy from the room
+    public Enemy getEnemy(Enemy enemy) {
+        return this.enemy;
+    }
     
     
     // Retrieves East neighbour

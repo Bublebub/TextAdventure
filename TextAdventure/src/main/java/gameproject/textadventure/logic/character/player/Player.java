@@ -7,8 +7,7 @@ import gameproject.textadventure.logic.gameMap.Room;
 public class Player {
     
     String name;
-    int health;
-    int attack;
+    int health, attack;
     Room currentLocation;
     
     // Creates player in the assigned room

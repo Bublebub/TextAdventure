@@ -21,19 +21,9 @@ public class InputReader {
             
             String command = trimCommand(this.scanner.nextLine());
             
-            if (command.equals("go east")) {
-                this.player.moveEast();
-                
-            } else if (command.equals("go west")) {
-                this.player.moveWest();
-                
-            } else if (command.equals("go south")) {
-                this.player.moveSouth();
-                
-            } else if (command.equals("go north")) {
-                this.player.moveNorth();
-                
-            } else if (command.equals("exit")) {
+            movementCommands(command);
+            
+            if (command.equals("exit")) {
                 break;
             }
         }
@@ -45,6 +35,24 @@ public class InputReader {
         command.trim();
         
         return command;
+    }
+    
+    
+    private void movementCommands(String command) {
+        
+        if (command.equals("go east")) {
+            this.player.moveEast();
+            
+        } else if (command.equals("go west")) {
+            this.player.moveWest();
+            
+        } else if (command.equals("go south")) {
+            this.player.moveSouth();
+            
+        } else if (command.equals("go north")) {
+            this.player.moveNorth();
+            
+        }
     }
     
     
