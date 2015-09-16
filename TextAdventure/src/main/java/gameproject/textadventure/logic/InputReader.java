@@ -2,6 +2,7 @@
 package gameproject.textadventure.logic;
 
 import gameproject.textadventure.logic.character.player.Player;
+import gameproject.textadventure.logic.gameEvent.CombatEvent;
 import java.util.Scanner;
 
 
@@ -22,6 +23,8 @@ public class InputReader {
             String command = trimCommand(this.scanner.nextLine());
             
             movementCommands(command);
+            checkRoomForEnemy();
+            
             
             if (command.equals("exit")) {
                 break;
@@ -52,6 +55,14 @@ public class InputReader {
         } else if (command.equals("go north")) {
             this.player.moveNorth();
             
+        }
+    }
+    
+    // Checks if combat should be initialized
+    private void checkRoomForEnemy() {
+        if (this.player.getLocation().containsEnemy()) {
+            CombatEvent combat = new CombatEvent(this.player, this.player.getLocation().getEnemy());
+            combat.start();
         }
     }
     

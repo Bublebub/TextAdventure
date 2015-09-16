@@ -15,6 +15,15 @@ public class Room {
         this.id = id;
     }
     
+    // Returns true if room contains an enemy
+    public boolean containsEnemy(){
+        if (this.enemy != null) {
+            return true;
+        }
+        
+        return false;
+    }
+    
     //              -- Setters --
     
     // Sets rooms ID
@@ -67,7 +76,7 @@ public class Room {
     }
     
     // Gets an enemy from the room
-    public Enemy getEnemy(Enemy enemy) {
+    public Enemy getEnemy() {
         return this.enemy;
     }
     
