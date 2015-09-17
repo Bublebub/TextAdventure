@@ -20,6 +20,7 @@ public class Player {
     
     //          -- Movement --
     
+    // Moves player East and gets rooms description
     public void moveEast() {
         if (this.currentLocation.getEast() == null) {
             System.out.println("Can't move there!");
@@ -29,6 +30,7 @@ public class Player {
         }
     }
     
+    // Moves player West and gets rooms description
     public void moveWest() {
         if (this.currentLocation.getWest() == null) {
             System.out.println("Can't move there!");
@@ -38,6 +40,7 @@ public class Player {
         }
     }
     
+    // Moves player South and gets rooms description
     public void moveSouth() {
         if (this.currentLocation.getSouth() == null) {
             System.out.println("Can't move there!");
@@ -47,6 +50,7 @@ public class Player {
         }
     }
     
+    // Moves player North and gets rooms description
     public void moveNorth() {
         if (this.currentLocation.getNorth() == null) {
             System.out.println("Can't move there!");
