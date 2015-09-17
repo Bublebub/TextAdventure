@@ -18,3 +18,6 @@ Bugin metsästystä.. Aikaa kului n. tunti.
 
 #16.9.2015
 Bugi korjattu, pelaaja pystyy nyt liikkumaan kartassa. Aikaa kului n. 10 min. *Enemy* rajapinta ja *CombatEvent* luokka lisätty, aikaa kului n. tunti. Muokkauksia *CombatEventiin*, *Roomiin* sekä *InputReaderiin*, aikaa kului n. 20 min.
+
+#17.9.2015
+*GameMainTest* testiluokka ja muutama kommentti lisätty, aikaa kului muutama minuutti.
