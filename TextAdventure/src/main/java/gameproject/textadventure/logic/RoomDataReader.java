@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.Map;
 import java.util.Scanner;
 
-
+// Reads rooms info from textfiles
 public class RoomDataReader {
     
     Scanner scanner;

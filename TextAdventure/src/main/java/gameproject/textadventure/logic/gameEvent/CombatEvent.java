@@ -15,6 +15,7 @@ public class CombatEvent {
         this.enemy = enemy;
     }
     
+    // Starts combat event loop
     public void start() {
         
         while (true) {

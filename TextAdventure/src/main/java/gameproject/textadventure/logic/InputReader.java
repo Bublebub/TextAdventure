@@ -12,6 +12,7 @@ public class InputReader {
     Scanner scanner;
     Player player;
     
+    // Reads commands from user
     public void start(Player player) {
         
         this.player = player;
@@ -32,7 +33,7 @@ public class InputReader {
         }
     }
     
-    
+    // Trims command
     public String trimCommand(String command) {
         String trimmedCommand = command;
         
@@ -42,7 +43,7 @@ public class InputReader {
         return trimmedCommand;
     }
     
-    
+    // Handles movement commands
     private void movementCommands(String command) {
         
         if (command.equals("go east")) {
@@ -60,14 +61,12 @@ public class InputReader {
         }
     }
     
-    // Checks if combat should be initialized
+    // Checks if combat should be initialized (if the room contains an enemy)
     private void checkRoomForEnemy() {
         if (this.player.getLocation().containsEnemy()) {
             CombatEvent combat = new CombatEvent(this.player, this.player.getLocation().getEnemy());
             combat.start();
         }
     }
-    
-    
     
 }

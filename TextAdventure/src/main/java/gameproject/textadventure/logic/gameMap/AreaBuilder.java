@@ -19,26 +19,28 @@ public class AreaBuilder {
     }
     
     
-    // Builds the games area
+    /*  Current room layout:
+        [R0] [R1]
+        [R2] [R4]
+    */
+    
+    // Builds the game area
     public void buildArea() throws Exception {
         createEmptyMap();
         
         for (String id : this.gameMap.keySet()) {
             
+            // Gives datareader correct path to rooms info
             this.roomDataReader = new RoomDataReader("src/main/java/gameproject/textadventure/logic/gameMap/roomData/" + id + ".txt");
             
-            
             Room currentRoom = this.gameMap.get(id);
-            
             
             this.roomDataReader.assignRoomNeighbours(currentRoom, this.gameMap);
             this.roomDataReader.assignDescription(currentRoom);
             
-            
         }
         
     }
-        
     
     
     // Creates a map with empty rooms
