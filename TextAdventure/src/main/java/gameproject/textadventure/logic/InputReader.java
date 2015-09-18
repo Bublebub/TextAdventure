@@ -33,11 +33,13 @@ public class InputReader {
     }
     
     
-    private String trimCommand(String command) {
-        command.toLowerCase();
-        command.trim();
+    public String trimCommand(String command) {
+        String trimmedCommand = command;
         
-        return command;
+        trimmedCommand = trimmedCommand.toLowerCase();
+        trimmedCommand = trimmedCommand.trim();
+        
+        return trimmedCommand;
     }
     
     

@@ -1,0 +1,6 @@
+East: R1
+West: Wall
+South: R2
+North: Wall
+
+Description: eka
