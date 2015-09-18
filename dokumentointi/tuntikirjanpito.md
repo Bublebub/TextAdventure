@@ -21,3 +21,6 @@ Bugi korjattu, pelaaja pystyy nyt liikkumaan kartassa. Aikaa kului n. 10 min. *E
 
 #17.9.2015
 *GameMainTest* testiluokka ja muutama kommentti lisätty, aikaa kului muutama minuutti.
+
+#18.9.2015
+Lisätty testejä ja päivitetty luokkakaaviota, aikaa kului n. 3 tuntia.
