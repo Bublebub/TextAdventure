@@ -24,3 +24,6 @@ Bugi korjattu, pelaaja pystyy nyt liikkumaan kartassa. Aikaa kului n. 10 min. *E
 
 #18.9.2015
 Lisätty testejä ja päivitetty luokkakaaviota, aikaa kului n. 3 tuntia.
+
+#24.9.2015
+Lisätty muutama uusi huone, Javadoc, sekä pit (joka oli unohtunut edellisellä viikolla siirtää *dokumentointi* kansioon). Aikaa kului n. tunti.
