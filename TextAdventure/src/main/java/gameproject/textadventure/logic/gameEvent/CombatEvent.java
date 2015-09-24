@@ -7,40 +7,51 @@ import gameproject.textadventure.logic.character.enemies.Enemy;
 
 public class CombatEvent {
     
-    Player player;
-    Enemy enemy;
+    private Player player;
+    private Enemy enemy;
     
     public CombatEvent(Player player, Enemy enemy) {
         this.player = player;
         this.enemy = enemy;
     }
     
-    // Starts combat event loop
+    /**
+     * Starts combat event loop
+     */
     public void start() {
         
         while (true) {
             
             if (PlayerDead()) {
                 break;
+                
             } else if (EnemyDead()) {
                 break;
+                
             }
-            
             
             
         }
     }
     
-    // Return true if player is dead
+    /**
+     * Checks if Player is dead
+     * 
+     * @return true if Player is dead
+     */
     public boolean PlayerDead() {
         if (this.player.getHealth() <= 0) {
-                System.out.println("You have been slained by " + this.enemy.getName());
+                System.out.println("You have been killed by " + this.enemy.getName());
                 return true;
         }
         return false;
     }
     
-    // Returns true if enemy is dead
+    /**
+     * Returns true if Enemy is dead
+     * 
+     * @return true if Enemy is dead
+     */
     public boolean EnemyDead() {
         
         if (this.enemy.getHealth() <= 0) {
@@ -51,6 +62,19 @@ public class CombatEvent {
         return false;
         
     }
+    
+    /**
+     * Handles Players combat commands
+     * 
+     * @param command 
+     */
+    public void PlayerAction(String command) {
+        
+        if (command.equals("attack")) {
+            this.player.AttackEnemy(this.enemy);
+        }
+    }
+    
     
     
     

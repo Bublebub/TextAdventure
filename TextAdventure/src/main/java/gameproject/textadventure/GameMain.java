@@ -11,9 +11,8 @@ public class GameMain {
 
 
     public static void main(String[] args) {
-        // TODO code application logic here
         
-        AreaBuilder area = new AreaBuilder(4);
+        AreaBuilder area = new AreaBuilder(6);
         InputReader input = new InputReader();
         
         try {

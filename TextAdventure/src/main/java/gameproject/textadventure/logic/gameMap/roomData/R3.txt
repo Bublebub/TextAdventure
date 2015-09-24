@@ -1,6 +1,6 @@
 East: Wall
 West: R2
-South: Wall
+South: R5
 North: R1
 
 Description: neljas

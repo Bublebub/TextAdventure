@@ -6,16 +6,32 @@ import java.io.File;
 import java.util.Map;
 import java.util.Scanner;
 
-// Reads rooms info from textfiles
+/**
+ * Reads rooms info from textfiles
+ * 
+ * @author Elmeri
+ */
 public class RoomDataReader {
     
-    Scanner scanner;
+    private Scanner scanner;
     
+    /**
+     * Constuctor is given files location
+     * 
+     * @param fileLocation path to the file
+     * 
+     * @throws Exception 
+     */
     public RoomDataReader(String fileLocation) throws Exception {
         this.scanner = new Scanner(new File(fileLocation));
     }
     
-    // Assigns all rooms neighbours
+    /**
+     * Assigns all given Rooms neighbours
+     * 
+     * @param room
+     * @param map gets neighbours from the Map
+     */
     public void assignRoomNeighbours(Room room, Map<String, Room> map) {
         
         
@@ -56,7 +72,11 @@ public class RoomDataReader {
     }
     
     
-    // Assigns rooms description from file
+    /**
+     * Assigns description to given Room from textfile
+     * 
+     * @param room 
+     */
     public void assignDescription(Room room) {
         
         if (this.scanner.next().equals("Description:")) {

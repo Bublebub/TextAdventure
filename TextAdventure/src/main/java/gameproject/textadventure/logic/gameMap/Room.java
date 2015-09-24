@@ -4,18 +4,31 @@ package gameproject.textadventure.logic.gameMap;
 import gameproject.textadventure.logic.character.enemies.Enemy;
 
 
-// This class creates rooms where player can/can't go
+/**
+ * This class creates rooms where player can/can't go
+ * 
+ * @author Elmeri
+ */
 public class Room {
     // Each room knows its neighbours and has a specific description and ID
-    Room east, west, south, north;
-    String description, id;
-    Enemy enemy;
+    private Room east, west, south, north;
+    private String description, id;
+    private Enemy enemy;
     
+    /**
+     * Creates a Room with given ID
+     * 
+     * @param id 
+     */
     public Room(String id) {
         this.id = id;
     }
     
-    // Returns true if room contains an enemy
+    /**
+     * Returns true if room contains an Enemy
+     * 
+     * @return true if Room contains an Enemy
+     */
     public boolean containsEnemy(){
         if (this.enemy != null) {
             return true;
@@ -26,77 +39,133 @@ public class Room {
     
     //              -- Setters --
     
-    // Sets rooms ID
+    /**
+     * Sets rooms ID
+     * 
+     * @param id new ID
+     */
     public void setID(String id) {
         this.id = id;
     }
     
-    // Sets rooms description
+    /**
+     * Sets rooms description
+     * 
+     * @param text description
+     */
     public void setDescription(String text) {
         this.description = text;
     }
     
-    // Sets an enemy in the room
+    /**
+     * Sets given Enemy in the room
+     * 
+     * @param enemy 
+     */
     public void setEnemy(Enemy enemy) {
         this.enemy = enemy;
     }
     
     
     
-    // Sets rooms East neigbour
+    /**
+     * Sets rooms East neigbour
+     * 
+     * @param neighbour (Room)
+     */
     public void setEast(Room neighbour) {
         this.east = neighbour;
     }
     
-    // Sets rooms West neigbour
+    /**
+     * Sets rooms West neigbour
+     * 
+     * @param neighbour (Room)
+     */
     public void setWest(Room neighbour) {
         this.west = neighbour;
     }
     
-    // Sets rooms South neigbour
+    /**
+     * Sets rooms South neigbour
+     * 
+     * @param neighbour (Room)
+     */
     public void setSouth(Room neighbour) {
         this.south = neighbour;
     }
     
-    // Sets rooms North neigbour
+    /**
+     * Sets rooms North neigbour
+     * 
+     * @param neighbour (Room)
+     */
     public void setNorth(Room neighbour) {
         this.north = neighbour;
     }
     
     //              -- Getters --
     
-    // Retrieves rooms ID
+    /**
+     * Retrieves rooms ID
+     * 
+     * @return this.id
+     */
     public String getID() {
         return this.id;
     }
     
-    // Retrieves rooms description
+    /**
+     * Retrieves rooms description
+     * 
+     * @return this.description
+     */
     public String getDescription() {
         return this.description;
     }
     
-    // Gets an enemy from the room
+    /**
+     * Retrieves an Enemy from the room
+     * 
+     * @return this.enemy
+     */
     public Enemy getEnemy() {
         return this.enemy;
     }
     
     
-    // Retrieves East neighbour
+    /**
+     * Retrieves Rooms East neighbour
+     * 
+     * @return this.east
+     */
     public Room getEast() {
         return this.east;
     }
     
-    // Retrieves West neighbour
+    /**
+     * Retrieves Rooms West neighbour
+     * 
+     * @return this.west
+     */
     public Room getWest() {
         return this.west;
     }
     
-    // Retrieves South neighbour
+    /**
+     * Retrieves Rooms South neighbour
+     * 
+     * @return this.south
+     */
     public Room getSouth() {
         return this.south;
     }
    
-    // Retrieves North neighbour
+    /**
+     * Retrieves Rooms North neighbour
+     * 
+     * @return this.north
+     */
     public Room getNorth() {
         return this.north;
     }

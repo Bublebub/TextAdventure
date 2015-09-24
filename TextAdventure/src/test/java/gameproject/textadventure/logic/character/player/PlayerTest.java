@@ -30,7 +30,7 @@ public class PlayerTest {
     
     @Test
     public void ConstructorSetsPlayerToStartRoom() {
-        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.currentLocation);
+        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.getLocation());
     }
     
     
@@ -40,13 +40,13 @@ public class PlayerTest {
     @Test
     public void playerCanMoveToEastRoomFromStart() {
         this.player.moveEast();
-        assertEquals(this.mapMaker.getGameMap().get("R1"), this.player.currentLocation);
+        assertEquals(this.mapMaker.getGameMap().get("R1"), this.player.getLocation());
     }
     
     @Test
     public void playerCanMoveToSouthRoomFromStart() {
         this.player.moveSouth();
-        assertEquals(this.mapMaker.getGameMap().get("R2"), this.player.currentLocation);
+        assertEquals(this.mapMaker.getGameMap().get("R2"), this.player.getLocation());
     }
     
     @Test
@@ -54,7 +54,7 @@ public class PlayerTest {
         this.player.moveWest();
         
         // If player can't move, currentLocation stays the same
-        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.currentLocation);
+        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.getLocation());
     }
     
     @Test
@@ -62,7 +62,7 @@ public class PlayerTest {
         this.player.moveNorth();
         
         // If player can't move, currentLocation stays the same
-        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.currentLocation);
+        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.getLocation());
     }
     
     
@@ -75,7 +75,7 @@ public class PlayerTest {
         
         this.player.moveWest();
         
-        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.currentLocation);
+        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.getLocation());
     }
     
     @Test
@@ -84,7 +84,7 @@ public class PlayerTest {
         
         this.player.moveNorth();
         
-        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.currentLocation);
+        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.getLocation());
     }
     
     
@@ -94,7 +94,7 @@ public class PlayerTest {
         
         this.player.moveNorth();
         
-        assertEquals(this.mapMaker.getGameMap().get("R1"), this.player.currentLocation);
+        assertEquals(this.mapMaker.getGameMap().get("R1"), this.player.getLocation());
     }
     
     @Test
@@ -103,7 +103,7 @@ public class PlayerTest {
         
         this.player.moveSouth();
         
-        assertEquals(this.mapMaker.getGameMap().get("R2"), this.player.currentLocation);
+        assertEquals(this.mapMaker.getGameMap().get("R2"), this.player.getLocation());
     }
     
     

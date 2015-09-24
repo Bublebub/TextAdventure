@@ -6,13 +6,21 @@ import gameproject.textadventure.logic.gameEvent.CombatEvent;
 import java.util.Scanner;
 
 
-
+/**
+ * Reads commands from the user
+ * 
+ * @author Elmeri
+ */
 public class InputReader {
     
-    Scanner scanner;
-    Player player;
+    private Scanner scanner;
+    private Player player;
     
-    // Reads commands from user
+    /**
+     * Starts command reading loop
+     * 
+     * @param player Player affected by commands
+     */
     public void start(Player player) {
         
         this.player = player;
@@ -33,7 +41,13 @@ public class InputReader {
         }
     }
     
-    // Trims command
+    /**
+     * Trims given command
+     * 
+     * @param command
+     * 
+     * @return trimmed version of command
+     */
     public String trimCommand(String command) {
         String trimmedCommand = command;
         
@@ -43,7 +57,11 @@ public class InputReader {
         return trimmedCommand;
     }
     
-    // Handles movement commands
+    /**
+     * Handles movement commands
+     * 
+     * @param command 
+     */
     private void movementCommands(String command) {
         
         if (command.equals("go east")) {
@@ -61,7 +79,10 @@ public class InputReader {
         }
     }
     
-    // Checks if combat should be initialized (if the room contains an enemy)
+    /**
+     * Checks if combat should be initialized
+     * (if the Room(Players current location) contains an enemy)
+     */
     private void checkRoomForEnemy() {
         if (this.player.getLocation().containsEnemy()) {
             CombatEvent combat = new CombatEvent(this.player, this.player.getLocation().getEnemy());
