@@ -16,6 +16,10 @@ public class InputReader {
     private Scanner scanner;
     private Player player;
     
+    public InputReader() {
+        this.scanner = new Scanner(System.in);
+    }
+    
     /**
      * Starts command reading loop
      * 
@@ -27,8 +31,6 @@ public class InputReader {
         
         while (true) {
             System.out.print("Command: ");
-            this.scanner = new Scanner(System.in);
-            
             String command = trimCommand(this.scanner.nextLine());
             
             movementCommands(command);
@@ -40,6 +42,8 @@ public class InputReader {
             }
         }
     }
+    
+    
     
     /**
      * Trims given command
@@ -81,13 +85,37 @@ public class InputReader {
     
     /**
      * Checks if combat should be initialized
-     * (if the Room(Players current location) contains an enemy)
+     * (if the Room(Players current location) contains an Enemy)
      */
     private void checkRoomForEnemy() {
-        if (this.player.getLocation().containsEnemy()) {
+        if (this.player.getLocation().containsEnemy() 
+                && (this.player.getLocation().getEnemy().getHealth() > 0)) {
             CombatEvent combat = new CombatEvent(this.player, this.player.getLocation().getEnemy());
-            combat.start();
+            
+            System.out.println(this.player.getLocation().getEnemy().getName() + " appears!");
+            
+            ReadCombatEventCommands(combat);
+            
         }
+    }
+    
+    /**
+     * Reads commands when combat is initialized and passes them to given CombatEvent
+     * 
+     * @param combat CombatEvent where the commands are used
+     */
+    public void ReadCombatEventCommands(CombatEvent combat) {
+        
+        while (true) {
+            System.out.print("Combat Command: ");
+            String command = trimCommand(this.scanner.nextLine());
+            
+            // Executes combat round and breaks the loop when combat ends
+            if (combat.ExecuteCombatRound(command)) {
+                break;
+            }
+        }
+        
     }
     
 }

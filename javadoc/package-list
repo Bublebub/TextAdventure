@@ -1,0 +1,7 @@
+gameproject.textadventure
+gameproject.textadventure.logic
+gameproject.textadventure.logic.character.enemies
+gameproject.textadventure.logic.character.player
+gameproject.textadventure.logic.gameEvent
+gameproject.textadventure.logic.gameMap
+gameproject.textadventure.logic.item

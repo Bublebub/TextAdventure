@@ -15,7 +15,7 @@ public class PlayerTest {
     
     @Before
     public void setUp() {
-        this.mapMaker = new AreaBuilder(4);
+        this.mapMaker = new AreaBuilder(6);
         
         try {
             this.mapMaker.buildArea();
@@ -99,11 +99,11 @@ public class PlayerTest {
     
     @Test
     public void playerCanNotMoveToSouthFromOtherRoom() {
-        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R2"));
+        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R4"));
         
         this.player.moveSouth();
         
-        assertEquals(this.mapMaker.getGameMap().get("R2"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R4"), this.player.getLocation());
     }
     
     

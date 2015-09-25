@@ -13,18 +13,14 @@ public class Skeleton implements Enemy {
     private Room currentLocation;
     
     /**
-     * Creates Skeleton in assigned Room
-     * 
-     * @param room starting Room
+     * Creates Skeleton
      */
-    public Skeleton(Room room) {
+    public Skeleton() {
         this.name = "Skeleton";
         
         this.health = 25;
-        this.attack = 3;    // Max damage value
+        this.attack = 5;    // Max damage value
         this.damage = 0;    // Varies between 0...this.attack
-        
-        this.currentLocation = room;
     }
     
     /**

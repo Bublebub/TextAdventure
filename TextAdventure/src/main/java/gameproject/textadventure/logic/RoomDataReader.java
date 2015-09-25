@@ -27,47 +27,61 @@ public class RoomDataReader {
     }
     
     /**
-     * Assigns all given Rooms neighbours
+     * Assigns all neighbours for given Room
      * 
      * @param room
+     * 
      * @param map gets neighbours from the Map
      */
     public void assignRoomNeighbours(Room room, Map<String, Room> map) {
         
-        
         for (int i = 0; i < 4; i++) {
             String neighbour = this.scanner.next(); // Gets neighbours side (E, W, S, N)
-            String wallOrRoom; // Used to check if side has a room/wall
             
             if (neighbour.equals("East:")) {
-                wallOrRoom = this.scanner.next();
-                
-                if (!wallOrRoom.equals("Wall")) {
-                    room.setEast(map.get(wallOrRoom));
-                }
+                assignEastNeighbour(room, map);
                 
             } else if (neighbour.equals("West:")) {
-                wallOrRoom = this.scanner.next();
-                
-                if (!wallOrRoom.equals("Wall")) {
-                    room.setWest(map.get(wallOrRoom));
-                }
+                assignWestNeighbour(room, map);
                 
             } else if (neighbour.equals("South:")) {
-                wallOrRoom = this.scanner.next();
-                
-                if (!wallOrRoom.equals("Wall")) {
-                    room.setSouth(map.get(wallOrRoom));
-                }
+                assignSouthNeighbour(room, map);
                 
             } else if (neighbour.equals("North:")) {
-                wallOrRoom = this.scanner.next();
-                
-                if (!wallOrRoom.equals("Wall")) {
-                    room.setNorth(map.get(wallOrRoom));
-                }
-                
+                assignNorthNeighbour(room, map);
             }
+        }
+    }
+    
+    private void assignEastNeighbour(Room room, Map map) {
+        String wallOrRoom = this.scanner.next();
+                
+        if (!wallOrRoom.equals("Wall")) {
+            room.setEast((Room) map.get(wallOrRoom));
+        }
+    }
+    
+    private void assignWestNeighbour(Room room, Map map) {
+        String wallOrRoom = this.scanner.next();
+                
+        if (!wallOrRoom.equals("Wall")) {
+            room.setWest((Room) map.get(wallOrRoom));
+        }
+    }
+    
+    private void assignSouthNeighbour(Room room, Map map) {
+        String wallOrRoom = this.scanner.next();
+                
+        if (!wallOrRoom.equals("Wall")) {
+            room.setSouth((Room) map.get(wallOrRoom));
+        }
+    }
+    
+    private void assignNorthNeighbour(Room room, Map map) {
+        String wallOrRoom = this.scanner.next();
+                
+        if (!wallOrRoom.equals("Wall")) {
+            room.setNorth((Room) map.get(wallOrRoom));
         }
     }
     

@@ -16,22 +16,49 @@ public class CombatEvent {
     }
     
     /**
-     * Starts combat event loop
+     * Handles both Player and Enemy combat commands
+     * 
+     * @param command
+     * 
+     * @return true if combat has ended
      */
-    public void start() {
+    public boolean ExecuteCombatRound(String command) {
         
-        while (true) {
-            
-            if (PlayerDead()) {
-                break;
-                
-            } else if (EnemyDead()) {
-                break;
-                
-            }
-            
-            
+        // Player turn
+        if (!PlayerAction(command)) {
+            return false;
         }
+        if (EnemyDead()) {
+            return true;
+        }
+        
+        // Enemy turn
+        this.enemy.attackPlayer(this.player);
+        if (PlayerDead()) {
+            return true;
+        }
+        
+        System.out.print("Player hp: " + this.player.getHealth() + ", ");
+        System.out.println(this.enemy.getName() + " hp: "+ this.enemy.getHealth());
+        
+        return false;
+    }
+    
+    /**
+     * Handles Players combat commands
+     * 
+     * @param command 
+     * 
+     * @return true if command was accepted
+     */
+    public boolean PlayerAction(String command) {
+        
+        if (command.equals("attack")) {
+            this.player.AttackEnemy(this.enemy);
+            return true;
+        }
+        
+        return false;
     }
     
     /**
@@ -48,7 +75,7 @@ public class CombatEvent {
     }
     
     /**
-     * Returns true if Enemy is dead
+     * Checks if Enemy is dead
      * 
      * @return true if Enemy is dead
      */
@@ -56,26 +83,9 @@ public class CombatEvent {
         
         if (this.enemy.getHealth() <= 0) {
                 System.out.println("You have slain your enemy");
-                this.enemy.getLocation().setEnemy(null);
                 return true;
         }
         return false;
         
     }
-    
-    /**
-     * Handles Players combat commands
-     * 
-     * @param command 
-     */
-    public void PlayerAction(String command) {
-        
-        if (command.equals("attack")) {
-            this.player.AttackEnemy(this.enemy);
-        }
-    }
-    
-    
-    
-    
 }
