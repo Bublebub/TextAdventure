@@ -26,4 +26,7 @@ Bugi korjattu, pelaaja pystyy nyt liikkumaan kartassa. Aikaa kului n. 10 min. *E
 Lisätty testejä ja päivitetty luokkakaaviota, aikaa kului n. 3 tuntia.
 
 #24.9.2015
-Lisätty *Skeleton* luokka, muutama uusi huone, Javadoc, sekä pit (joka oli unohtunut edellisellä viikolla siirtää *dokumentointi* kansioon). Aikaa kului n. 1,5 tuntia.
+Lisätty *Skeleton* luokka, muutama uusi huone, JavaDoc, sekä pit (joka oli unohtunut edellisellä viikolla siirtää *dokumentointi* kansioon). Aikaa kului n. 1,5 tuntia.
+
+#25.9.2015
+Pelin sisäinen taistelu saatu toimimaan(tällä hetkellä sisältää pelkän *attack* komennon), pit sekä JavaDoc päivitetty ja siirretty oikeisiin kansioihin, testejä lisätty, koodia paikoitellen siistitty. Aikaa kului n. 2,5 tuntia.
