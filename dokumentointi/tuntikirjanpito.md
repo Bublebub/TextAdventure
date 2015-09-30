@@ -30,3 +30,6 @@ Lisätty *Skeleton* luokka, muutama uusi huone, JavaDoc, sekä pit (joka oli uno
 
 #25.9.2015
 Pelin sisäinen taistelu saatu toimimaan(tällä hetkellä sisältää pelkän *attack* komennon), pit sekä JavaDoc päivitetty ja siirretty oikeisiin kansioihin, testejä lisätty, koodia paikoitellen siistitty. Aikaa kului n. 2,5 tuntia.
+
+#30.9.2015
+Käyttöliittymän runko rakennettu, opiskeltu uusia asioita. Aikaa kului n. 4 tuntia.
