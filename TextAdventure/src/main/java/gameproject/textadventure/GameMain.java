@@ -7,6 +7,7 @@ import gameproject.textadventure.logic.character.enemies.Skeleton;
 import gameproject.textadventure.logic.character.player.Player;
 import gameproject.textadventure.logic.gameMap.AreaBuilder;
 import gameproject.textadventure.logic.gameMap.Room;
+import gameproject.textadventure.userInterface.UserInterface;
 
 
 public class GameMain {
@@ -16,6 +17,7 @@ public class GameMain {
         
         AreaBuilder area = new AreaBuilder(6);
         InputReader input = new InputReader();
+        UserInterface ui = new UserInterface();
         
         try {
             area.buildArea();
@@ -32,7 +34,11 @@ public class GameMain {
         
         
         Player player = new Player((Room) area.getGameMap().get("R0"));
+        
+        ui.run();
+        
         input.start(player);
+        
         
         
         
