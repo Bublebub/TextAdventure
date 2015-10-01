@@ -39,6 +39,8 @@ public class GameMain {
         
         ui.run();
         
+        player.setTextDisplay(ui);
+        
         //input.start(player);
         
     }

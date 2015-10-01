@@ -3,6 +3,7 @@ package gameproject.textadventure.userInterface;
 
 import gameproject.textadventure.logic.InputReader;
 import gameproject.textadventure.userInterface.components.CommandFieldAction;
+import gameproject.textadventure.userInterface.components.TextDisplay;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -18,10 +19,12 @@ public class UserInterface implements Runnable {
     JTextField textField;
     JTextArea textArea;
     JScrollPane scrollPane;
+    TextDisplay textDisplay;
     
     public UserInterface(InputReader inputReader) {
         this.reader = inputReader;
     }
+    
     
     @Override
     public void run() {
@@ -71,6 +74,7 @@ public class UserInterface implements Runnable {
     private void createTextDisplayArea(JFrame container) {
         textArea = new JTextArea();
         scrollPane = new JScrollPane(textArea);
+        textDisplay = new TextDisplay(textArea);
         
         scrollPane.setBounds(10, 20, 250, 300);
         scrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
@@ -80,4 +84,9 @@ public class UserInterface implements Runnable {
         container.add(scrollPane);
     }
     
+    //      -- Getters --
+    
+    public JTextArea getTextDisplay() {
+        return textArea;
+    }
 }

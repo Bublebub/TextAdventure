@@ -3,7 +3,9 @@ package gameproject.textadventure.logic.character.player;
 
 import gameproject.textadventure.logic.character.enemies.Enemy;
 import gameproject.textadventure.logic.gameMap.Room;
+import gameproject.textadventure.userInterface.UserInterface;
 import java.util.Random;
+import javax.swing.JTextArea;
 
 
 public class Player {
@@ -11,6 +13,10 @@ public class Player {
     private String name;
     private int health, attack, damage;
     private Room currentLocation;
+    private JTextArea textDisplay;
+    
+    
+    
     
     /**
      * Creates Player in the assigned Room
@@ -45,10 +51,10 @@ public class Player {
      */
     public void moveEast() {
         if (this.currentLocation.getEast() == null) {
-            System.out.println("Can't move there!");
+            textDisplay.append("Can't move there!\n");
         } else {
             this.currentLocation = this.currentLocation.getEast();
-            System.out.println(this.currentLocation.getDescription());
+            textDisplay.append(this.currentLocation.getDescription() + "\n");
         }
     }
     
@@ -57,10 +63,10 @@ public class Player {
      */
     public void moveWest() {
         if (this.currentLocation.getWest() == null) {
-            System.out.println("Can't move there!");
+            textDisplay.append("Can't move there!\n");
         } else {
             this.currentLocation = this.currentLocation.getWest();
-            System.out.println(this.currentLocation.getDescription());
+            textDisplay.append(this.currentLocation.getDescription() + "\n");
         }
     }
     
@@ -69,10 +75,10 @@ public class Player {
      */
     public void moveSouth() {
         if (this.currentLocation.getSouth() == null) {
-            System.out.println("Can't move there!");
+            textDisplay.append("Can't move there!\n");
         } else {
             this.currentLocation = this.currentLocation.getSouth();
-            System.out.println(this.currentLocation.getDescription());
+            textDisplay.append(this.currentLocation.getDescription() + "\n");
         }
     }
     
@@ -81,16 +87,25 @@ public class Player {
      */
     public void moveNorth() {
         if (this.currentLocation.getNorth() == null) {
-            System.out.println("Can't move there!");
+            textDisplay.append("Can't move there!\n");
         } else {
             this.currentLocation = this.currentLocation.getNorth();
-            System.out.println(this.currentLocation.getDescription());
+            textDisplay.append(this.currentLocation.getDescription() + "\n");
         }
     }
     
     
     
     //          -- Setters --
+    
+    /**
+     * Sets JTextArea where games information is shown
+     * 
+     * @param ui UserInterface where JTextArea is created
+     */
+    public void setTextDisplay(UserInterface ui) {
+        textDisplay = ui.getTextDisplay();
+    }
     
     /**
      * Sets Players name
