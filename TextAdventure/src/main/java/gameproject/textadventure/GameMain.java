@@ -17,7 +17,7 @@ public class GameMain {
         
         AreaBuilder area = new AreaBuilder(6);
         InputReader input = new InputReader();
-        UserInterface ui = new UserInterface();
+        UserInterface ui = new UserInterface(input);
         
         try {
             area.buildArea();
@@ -34,15 +34,13 @@ public class GameMain {
         
         
         Player player = new Player((Room) area.getGameMap().get("R0"));
+        input.setPlayer(player);
+        
         
         ui.run();
         
-        input.start(player);
+        //input.start(player);
         
-        
-        
-        
-        System.out.println("Bye");
     }
     
 }

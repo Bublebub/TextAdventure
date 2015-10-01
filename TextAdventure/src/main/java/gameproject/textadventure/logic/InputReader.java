@@ -15,35 +15,32 @@ public class InputReader {
     
     private Scanner scanner;
     private Player player;
+    public String commandt;
     
     public InputReader() {
         this.scanner = new Scanner(System.in);
     }
     
-    /**
-     * Starts command reading loop
-     * 
-     * @param player Player affected by commands
-     */
-    public void start(Player player) {
-        
-        this.player = player;
-        
-        while (true) {
-            System.out.print("Command: ");
-            String command = trimCommand(this.scanner.nextLine());
-            
-            movementCommands(command);
-            checkRoomForEnemy();
-            
-            
-            if (command.equals("exit")) {
-                break;
-            }
-        }
+    public Scanner getScanner() {
+        return this.scanner;
     }
     
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
     
+    /**
+     * Executes given command
+     * 
+     * @param givenCommand command
+     */
+    public void ExecuteCommand(String givenCommand) {
+        
+        String command = trimCommand(givenCommand);
+            
+        movementCommands(command);
+        checkRoomForEnemy();
+    }
     
     /**
      * Trims given command

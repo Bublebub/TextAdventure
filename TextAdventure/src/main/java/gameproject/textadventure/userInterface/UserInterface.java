@@ -2,6 +2,7 @@
 package gameproject.textadventure.userInterface;
 
 import gameproject.textadventure.logic.InputReader;
+import gameproject.textadventure.userInterface.components.CommandFieldAction;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -18,7 +19,7 @@ public class UserInterface implements Runnable {
     JTextArea textArea;
     JScrollPane scrollPane;
     
-    public void UserInterface(InputReader inputReader) {
+    public UserInterface(InputReader inputReader) {
         this.reader = inputReader;
     }
     
@@ -54,6 +55,8 @@ public class UserInterface implements Runnable {
      */
     private void createCommandField(JFrame container){
         textField = new JTextField();
+        
+        textField.addActionListener(new CommandFieldAction(textField, this.reader));
         
         textField.setBounds(10, 340, 250, 22);
         
