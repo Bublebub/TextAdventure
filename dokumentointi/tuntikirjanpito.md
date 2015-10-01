@@ -33,3 +33,6 @@ Pelin sisäinen taistelu saatu toimimaan(tällä hetkellä sisältää pelkän *
 
 #30.9.2015
 Käyttöliittymän runko rakennettu, opiskeltu uusia asioita. Aikaa kului n. 4 tuntia.
+
+#1.9.2015
+Pelaajan liikkumiskomentojen suorittaminen siirretty toimimaan graafiseen käyttöliittymään, aikaa kului n. 3,5 tuntia.
