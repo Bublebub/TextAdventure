@@ -38,4 +38,4 @@ Käyttöliittymän runko rakennettu, opiskeltu uusia asioita. Aikaa kului n. 4 t
 Pelaajan liikkumiskomentojen suorittaminen siirretty toimimaan graafiseen käyttöliittymään, aikaa kului n. 3,5 tuntia. Huoneiden kuvausten tulostus siirretty graafiseen käyttöliittymään, muutama uusi osa lisätty. Aikaa kului n. tunti.
 
 #2.10.2015
-Testejä päivitetty sopimaan uuteen käyttöliittymään, uusia testejä lisätty, pit ja JavaDoc päivitetty. Aikaa kului n. 4 tuntia. Sekvenssikaaviot lisätty, aikaa meni n. tunti.
+Testejä päivitetty sopimaan uuteen käyttöliittymään, uusia testejä lisätty, pit ja JavaDoc päivitetty. Aikaa kului n. 4 tuntia. Sekvenssikaaviot lisätty, aikaa kului n. tunti.
