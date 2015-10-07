@@ -1,0 +1,6 @@
+East: Wall
+West: R4
+South: Wall
+North: R3
+
+Description: kuudes

@@ -1,0 +1,6 @@
+East: R5
+West: Wall
+South: Wall
+North: R2
+
+Description: viides

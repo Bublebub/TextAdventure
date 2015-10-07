@@ -45,12 +45,14 @@
                         <param>gameproject.textadventure.logic.character.player.*</param>
                         <param>gameproject.textadventure.logic.gameEvent.*</param>
                         <param>gameproject.textadventure.logic.gameMap.*</param>
+                        <param>gameproject.textadventure.userInterface.components.*</param>
                     </targetClasses>
                     <targetTests>
                         <param>gameproject.textadventure.logic.*</param>
                         <param>gameproject.textadventure.logic.character.player.*</param>
                         <param>gameproject.textadventure.logic.gameEvent.*</param>
                         <param>gameproject.textadventure.logic.gameMap.*</param>
+                        <param>gameproject.textadventure.userInterface.components.*</param>
                     </targetTests>
                 </configuration>
             </plugin>

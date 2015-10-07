@@ -1,8 +1,10 @@
 
 package gameproject.textadventure.logic.character.player;
 
+import gameproject.textadventure.logic.InputReader;
 import gameproject.textadventure.logic.gameMap.AreaBuilder;
 import gameproject.textadventure.logic.gameMap.Room;
+import gameproject.textadventure.userInterface.UserInterface;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -12,10 +14,14 @@ public class PlayerTest {
     
     AreaBuilder mapMaker;
     Player player;
+    UserInterface ui;
+    InputReader reader;
     
     @Before
     public void setUp() {
         this.mapMaker = new AreaBuilder(6);
+        this.reader = new InputReader();
+        this.ui = new UserInterface(this.reader);
         
         try {
             this.mapMaker.buildArea();
@@ -24,6 +30,12 @@ public class PlayerTest {
         }
         
         this.player = new Player((Room) this.mapMaker.getGameMap().get("R0"));
+        
+        this.reader.setPlayer(this.player);
+        
+        ui.run();
+        
+        player.setTextDisplay(ui);
         
     }
     
@@ -90,20 +102,20 @@ public class PlayerTest {
     
     @Test
     public void playerCanNotMoveToEastFromOtherRoom() {
-        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R1"));
+        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R5"));
         
-        this.player.moveNorth();
+        this.player.moveEast();
         
-        assertEquals(this.mapMaker.getGameMap().get("R1"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R5"), this.player.getLocation());
     }
     
     @Test
     public void playerCanNotMoveToSouthFromOtherRoom() {
-        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R4"));
+        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R5"));
         
         this.player.moveSouth();
         
-        assertEquals(this.mapMaker.getGameMap().get("R4"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R5"), this.player.getLocation());
     }
     
     
