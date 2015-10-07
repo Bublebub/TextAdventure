@@ -39,3 +39,6 @@ Pelaajan liikkumiskomentojen suorittaminen siirretty toimimaan graafiseen käytt
 
 #2.10.2015
 Testejä päivitetty sopimaan uuteen käyttöliittymään, uusia testejä lisätty, pit ja JavaDoc päivitetty. Aikaa kului n. 4 tuntia. Sekvenssikaaviot lisätty, aikaa kului n. tunti.
+
+#7.10.2015
+CombatEvent siirretty toimimaan uuteen käyttöliittymään, muutama luokka ja toiminnallisuus lisätty. Aikaa kului n. 5 tuntia.
