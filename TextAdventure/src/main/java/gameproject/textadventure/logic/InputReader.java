@@ -3,7 +3,7 @@ package gameproject.textadventure.logic;
 
 import gameproject.textadventure.logic.character.player.Player;
 import gameproject.textadventure.logic.gameEvent.CombatEvent;
-import java.util.Scanner;
+import javax.swing.JTextArea;
 
 
 /**
@@ -12,21 +12,14 @@ import java.util.Scanner;
  * @author Elmeri
  */
 public class InputReader {
-    
-    private Scanner scanner;
+
     private Player player;
     public String commandt;
+    public boolean inCombat;    // Used to check if player is in combat
+    public CombatEvent battle;
+    private JTextArea textDisplay;
     
     public InputReader() {
-        this.scanner = new Scanner(System.in);
-    }
-    
-    public Scanner getScanner() {
-        return this.scanner;
-    }
-    
-    public void setPlayer(Player player) {
-        this.player = player;
     }
     
     /**
@@ -89,30 +82,31 @@ public class InputReader {
                 && (this.player.getLocation().getEnemy().getHealth() > 0)) {
             CombatEvent combat = new CombatEvent(this.player, this.player.getLocation().getEnemy());
             
-            System.out.println(this.player.getLocation().getEnemy().getName() + " appears!");
             
-            ReadCombatEventCommands(combat);
             
+            inCombat = true;
+            battle = combat;
         }
     }
     
-    /**
-     * Reads commands when combat is initialized and passes them to given CombatEvent
-     * 
-     * @param combat CombatEvent where the commands are used
-     */
-    public void ReadCombatEventCommands(CombatEvent combat) {
-        
-        while (true) {
-            System.out.print("Combat Command: ");
-            String command = trimCommand(this.scanner.nextLine());
-            
-            // Executes combat round and breaks the loop when combat ends
-            if (combat.ExecuteCombatRound(command)) {
-                break;
-            }
-        }
-        
+    
+    //      -- Setters --
+    
+    
+    public void setPlayer(Player player) {
+        this.player = player;
     }
+    
+    public void setTextDisplay(JTextArea display){
+        this.textDisplay = display;
+    }
+    
+    
+    //      -- Getters --
+    
+    public Player GetPlayer() {
+        return this.player;
+    }
+    
     
 }

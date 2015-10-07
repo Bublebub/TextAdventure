@@ -19,6 +19,8 @@ public class GameMain {
         InputReader input = new InputReader();
         UserInterface ui = new UserInterface(input);
         
+        input.setTextDisplay(ui.getTextDisplay());
+        
         try {
             area.buildArea();
         } catch (Exception e) {
@@ -28,8 +30,6 @@ public class GameMain {
         Skeleton enemy = new Skeleton();
         Room room = (Room) area.getGameMap().get("R4");
         room.setEnemy(enemy);
-        
-        System.out.println("Commands: go east/west/south/north/exit" + "\n" + "Combat commands: attack");
         
         
         

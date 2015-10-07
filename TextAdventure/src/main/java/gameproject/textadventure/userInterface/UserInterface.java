@@ -42,6 +42,8 @@ public class UserInterface implements Runnable {
         
         frame.pack();
         
+        
+        
     }
     
     
@@ -59,7 +61,7 @@ public class UserInterface implements Runnable {
     private void createCommandField(JFrame container){
         textField = new JTextField();
         
-        textField.addActionListener(new CommandFieldAction(textField, this.reader));
+        textField.addActionListener(new CommandFieldAction(textField, this.reader, this));
         
         textField.setBounds(10, 340, 250, 22);
         
@@ -80,6 +82,8 @@ public class UserInterface implements Runnable {
         scrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
         
         textArea.setLineWrap(true);
+        
+        textArea.setText("Commands: go east / west / south / north\n" + "Combat commands: attack\n");
         
         container.add(scrollPane);
     }

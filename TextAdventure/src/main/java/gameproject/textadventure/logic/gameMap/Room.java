@@ -2,6 +2,7 @@
 package gameproject.textadventure.logic.gameMap;
 
 import gameproject.textadventure.logic.character.enemies.Enemy;
+import gameproject.textadventure.logic.item.Item;
 
 
 /**
@@ -14,6 +15,7 @@ public class Room {
     private Room east, west, south, north;
     private String description, id;
     private Enemy enemy;
+    private Item item;
     
     /**
      * Creates a Room with given ID
@@ -66,6 +68,9 @@ public class Room {
         this.enemy = enemy;
     }
     
+    public void setItem(Item item) {
+        this.item = item;
+    }
     
     
     /**
@@ -131,6 +136,10 @@ public class Room {
      */
     public Enemy getEnemy() {
         return this.enemy;
+    }
+    
+    public Item getItem() {
+        return this.item;
     }
     
     

@@ -1,9 +1,11 @@
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\RoomDataReader.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\item\Item.java
+C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\character\player\Inventory.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\character\player\Player.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\GameMain.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\userInterface\components\CommandFieldAction.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\InputReader.java
+C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\item\HealthPotion.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\gameEvent\CombatEvent.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\gameMap\Room.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\gameMap\AreaBuilder.java

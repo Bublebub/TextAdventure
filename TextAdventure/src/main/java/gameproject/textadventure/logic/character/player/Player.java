@@ -11,9 +11,10 @@ import javax.swing.JTextArea;
 public class Player {
     
     private String name;
-    private int health, attack, damage;
+    private int health, attack, damage, blockChance;
     private Room currentLocation;
     private JTextArea textDisplay;
+    private Inventory inventory;
     
     
     
@@ -29,6 +30,7 @@ public class Player {
         this.attack = 5;    // Max damage value
         this.damage = 0;    // Varies between 0..this.attack
         this.currentLocation = start;
+        this.inventory = new Inventory();
     }
     
     /**
@@ -43,6 +45,30 @@ public class Player {
         
         enemy.setHealth(enemy.getHealth() - this.damage);
     }
+    
+    public boolean Defend() {
+        Random random = new Random();
+        
+        this.blockChance = random.nextInt(2);
+        
+        if (this.blockChance == 0) {
+            textDisplay.append("You manage to defend yourself and gain 5 hp.\n");
+            
+            if (this.health >= 95) {
+                this.health = 5;
+            } else {
+                this.health += 15;
+            }
+            
+            return true;
+        }
+        
+        textDisplay.append("You failed to defend yourself!\n");
+        
+        return false;
+    }
+    
+    
     
     //          -- Movement --
     
@@ -146,40 +172,25 @@ public class Player {
     
     //          -- Getters --
     
-    /**
-     * Returns Players name
-     * 
-     * @return this.name
-     */
+    
     public String getName() {
         return this.name;
     }
     
-    /**
-     * Returns Players health
-     * 
-     * @return this.health
-     */
     public int getHealth() {
         return this.health;
     }
     
-    /**
-     * Returns Players attack value
-     * 
-     * @return this.attack (max damage)
-     */
     public int getAttack() {
         return this.attack;
     }
     
-    /**
-     * Returns Players current location
-     * 
-     * @return this.currentLocation (Room)
-     */
     public Room getLocation() {
         return this.currentLocation;
+    }
+    
+    public Inventory getInventory() {
+        return this.inventory;
     }
     
 }
