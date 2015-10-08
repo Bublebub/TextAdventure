@@ -3,7 +3,6 @@ package gameproject.textadventure.logic;
 
 import gameproject.textadventure.logic.character.player.Player;
 import gameproject.textadventure.logic.gameEvent.CombatEvent;
-import javax.swing.JTextArea;
 
 
 /**
@@ -17,7 +16,6 @@ public class InputReader {
     public String commandt;
     public boolean inCombat;    // Used to check if player is in combat
     public CombatEvent battle;
-    private JTextArea textDisplay;
     
     public InputReader() {
     }
@@ -82,8 +80,6 @@ public class InputReader {
                 && (this.player.getLocation().getEnemy().getHealth() > 0)) {
             CombatEvent combat = new CombatEvent(this.player, this.player.getLocation().getEnemy());
             
-            
-            
             inCombat = true;
             battle = combat;
         }
@@ -95,10 +91,6 @@ public class InputReader {
     
     public void setPlayer(Player player) {
         this.player = player;
-    }
-    
-    public void setTextDisplay(JTextArea display){
-        this.textDisplay = display;
     }
     
     

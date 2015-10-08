@@ -3,6 +3,7 @@ package gameproject.textadventure.logic.character.player;
 
 import gameproject.textadventure.logic.character.enemies.Enemy;
 import gameproject.textadventure.logic.gameMap.Room;
+import gameproject.textadventure.logic.item.HealthPotion;
 import gameproject.textadventure.userInterface.UserInterface;
 import java.util.Random;
 import javax.swing.JTextArea;
@@ -14,9 +15,7 @@ public class Player {
     private int health, attack, damage, blockChance;
     private Room currentLocation;
     private JTextArea textDisplay;
-    private Inventory inventory;
-    
-    
+    public Inventory inventory;
     
     
     /**
@@ -55,9 +54,9 @@ public class Player {
             textDisplay.append("You manage to defend yourself and gain 5 hp.\n");
             
             if (this.health >= 95) {
-                this.health = 5;
+                this.health = 100;
             } else {
-                this.health += 15;
+                this.health += 5;
             }
             
             return true;
@@ -130,7 +129,7 @@ public class Player {
      * @param ui UserInterface where JTextArea is created
      */
     public void setTextDisplay(UserInterface ui) {
-        textDisplay = ui.getTextDisplay();
+        textDisplay = ui.getTextArea();
     }
     
     /**

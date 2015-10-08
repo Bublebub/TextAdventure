@@ -7,6 +7,7 @@ import gameproject.textadventure.logic.character.enemies.Skeleton;
 import gameproject.textadventure.logic.character.player.Player;
 import gameproject.textadventure.logic.gameMap.AreaBuilder;
 import gameproject.textadventure.logic.gameMap.Room;
+import gameproject.textadventure.logic.item.HealthPotion;
 import gameproject.textadventure.userInterface.UserInterface;
 
 
@@ -19,8 +20,6 @@ public class GameMain {
         InputReader input = new InputReader();
         UserInterface ui = new UserInterface(input);
         
-        input.setTextDisplay(ui.getTextDisplay());
-        
         try {
             area.buildArea();
         } catch (Exception e) {
@@ -31,15 +30,15 @@ public class GameMain {
         Room room = (Room) area.getGameMap().get("R4");
         room.setEnemy(enemy);
         
-        
-        
         Player player = new Player((Room) area.getGameMap().get("R0"));
-        input.setPlayer(player);
         
+        input.setPlayer(player);
+        ui.setPlayer(player);
         
         ui.run();
         
         player.setTextDisplay(ui);
+        player.inventory.SetInventoryDisplay(ui.GetInventoryDisplay());
         
         //input.start(player);
         

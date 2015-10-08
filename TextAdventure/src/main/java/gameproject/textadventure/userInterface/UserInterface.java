@@ -2,6 +2,7 @@
 package gameproject.textadventure.userInterface;
 
 import gameproject.textadventure.logic.InputReader;
+import gameproject.textadventure.logic.character.player.Player;
 import gameproject.textadventure.userInterface.components.CommandFieldAction;
 import gameproject.textadventure.userInterface.components.TextDisplay;
 import java.awt.Dimension;
@@ -15,16 +16,18 @@ import javax.swing.WindowConstants;
 public class UserInterface implements Runnable {
     
     JFrame frame;
+    Player player;
+    
     InputReader reader;
     JTextField textField;
-    JTextArea textArea;
-    JScrollPane scrollPane;
-    TextDisplay textDisplay;
+    
+    JTextArea textArea, inventory;
+    JScrollPane textAreaScrollPane, inventoryScrollPane;
+    TextDisplay textDisplay, inventoryDisplay;
     
     public UserInterface(InputReader inputReader) {
         this.reader = inputReader;
     }
-    
     
     @Override
     public void run() {
@@ -43,13 +46,13 @@ public class UserInterface implements Runnable {
         frame.pack();
         
         
-        
     }
     
     
     private void createComponents(JFrame container) {
         createCommandField(container);
         createTextDisplayArea(container);
+        createInventory(container);
     }
     
     
@@ -75,22 +78,45 @@ public class UserInterface implements Runnable {
      */
     private void createTextDisplayArea(JFrame container) {
         textArea = new JTextArea();
-        scrollPane = new JScrollPane(textArea);
+        textAreaScrollPane = new JScrollPane(textArea);
         textDisplay = new TextDisplay(textArea);
         
-        scrollPane.setBounds(10, 20, 250, 300);
-        scrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
+        textAreaScrollPane.setBounds(10, 10, 615, 180);
+        textAreaScrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
         
         textArea.setLineWrap(true);
         
         textArea.setText("Commands: go east / west / south / north\n" + "Combat commands: attack\n");
         
-        container.add(scrollPane);
+        container.add(textAreaScrollPane);
+    }
+    
+    private void createInventory(JFrame container) {
+        inventory = new JTextArea();
+        inventoryScrollPane = new JScrollPane(inventory);
+        inventoryDisplay = new TextDisplay(inventory);
+        
+        inventoryScrollPane.setBounds(300, 350, 100, 50);
+        inventoryScrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
+        
+        inventory.setLineWrap(true);
+        
+        container.add(inventoryScrollPane);
+    }
+    
+    //      -- Setters --
+    
+    public void setPlayer(Player player) {
+        this.player = player;
     }
     
     //      -- Getters --
     
-    public JTextArea getTextDisplay() {
+    public JTextArea getTextArea() {
         return textArea;
+    }
+    
+    public TextDisplay GetInventoryDisplay() {
+        return inventoryDisplay;
     }
 }

@@ -99,4 +99,10 @@ public class CombatEvent {
     public void SetTextDisplay(JTextArea textDisplay) {
         display = textDisplay;
     }
+    
+    //      -- Getters --
+    
+    public Enemy GetEnemy() {
+        return this.enemy;
+    }
 }

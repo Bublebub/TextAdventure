@@ -6,11 +6,16 @@ import javax.swing.JTextArea;
 
 public class TextDisplay {
     
-    JTextArea display;
+    private JTextArea display;
     
     public TextDisplay(JTextArea area) {
         display = area;
         display.setEditable(false);
     }
+    
+    public void AddLine(String line) {
+        this.display.append(line);
+    }
+
     
 }

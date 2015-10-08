@@ -39,6 +39,8 @@ public class CommandFieldAction implements ActionListener {
             reader.ExecuteCommand(getCommand());
         }
         
+        CheckForCombat();
+        
     }
     
     /**
@@ -59,7 +61,9 @@ public class CommandFieldAction implements ActionListener {
     public void SwitchToCombat() {
         this.inCombat = true;
         this.battle = reader.battle;
-        this.battle.SetTextDisplay(ui.getTextDisplay());
+        this.battle.SetTextDisplay(ui.getTextArea());
+        this.ui.getTextArea().append(this.battle.GetEnemy().getName() + " appears!\n");
+        
     }
     
     
