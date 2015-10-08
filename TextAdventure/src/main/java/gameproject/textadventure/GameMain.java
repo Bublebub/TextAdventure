@@ -7,7 +7,6 @@ import gameproject.textadventure.logic.character.enemies.Skeleton;
 import gameproject.textadventure.logic.character.player.Player;
 import gameproject.textadventure.logic.gameMap.AreaBuilder;
 import gameproject.textadventure.logic.gameMap.Room;
-import gameproject.textadventure.logic.item.HealthPotion;
 import gameproject.textadventure.userInterface.UserInterface;
 
 

@@ -11,7 +11,7 @@ public class Inventory {
     
     
     private TextDisplay itemDisplay;
-    Map<String, Item> itemMap;
+    private Map<String, Item> itemMap;
     
     public void Inventory() {
         this.itemMap = new HashMap<>();
@@ -22,6 +22,8 @@ public class Inventory {
     }
     
     public void AddItem(String name, Item item) {
+        
+        // toimii, jos on Map<S, I> itemMap = new HashMap()
         
         this.itemMap.put(name, item);
         this.itemDisplay.AddLine(name + "\n");
