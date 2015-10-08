@@ -42,3 +42,6 @@ Testejä päivitetty sopimaan uuteen käyttöliittymään, uusia testejä lisät
 
 #7.10.2015
 CombatEvent siirretty toimimaan uuteen käyttöliittymään, muutama luokka ja toiminnallisuus lisätty. Aikaa kului n. 5 tuntia.
+
+#8.10.2015
+Bugin metsästystä, aikaa kului n. 5 tuntia.
