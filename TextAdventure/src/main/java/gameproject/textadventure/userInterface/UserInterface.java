@@ -7,6 +7,7 @@ import gameproject.textadventure.userInterface.components.CommandFieldAction;
 import gameproject.textadventure.userInterface.components.TextDisplay;
 import java.awt.Dimension;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -17,6 +18,8 @@ public class UserInterface implements Runnable {
     
     JFrame frame;
     Player player;
+    
+    JLabel commandLabel;
     
     InputReader reader;
     JTextField textField;
@@ -33,7 +36,7 @@ public class UserInterface implements Runnable {
     public void run() {
         
         frame = new JFrame();
-        frame.setPreferredSize(new Dimension(640, 480));
+        frame.setPreferredSize(new Dimension(640, 340));
         
         frame.setLayout(null);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -48,13 +51,31 @@ public class UserInterface implements Runnable {
         
     }
     
-    
+    /**
+     * Creates all the components for JFrame
+     * 
+     * @param container JFrame where components are added
+     */
     private void createComponents(JFrame container) {
+        createLabel(container);
         createCommandField(container);
         createTextDisplayArea(container);
         createInventory(container);
     }
     
+    /**
+     * Creates label for commandfield
+     * 
+     * @param container JFrame where components are added
+     */
+    private void createLabel(JFrame container) {
+        commandLabel = new JLabel();
+        
+        commandLabel.setText("Commandfield");
+        commandLabel.setBounds(10, 193, 250, 22);
+        
+        container.add(commandLabel);
+    }
     
     /**
      * Creates TextField for Player commands
@@ -66,7 +87,7 @@ public class UserInterface implements Runnable {
         
         textField.addActionListener(new CommandFieldAction(textField, this.reader, this));
         
-        textField.setBounds(10, 340, 250, 22);
+        textField.setBounds(10, 215, 250, 22);
         
         container.add(textField);
     }
@@ -86,17 +107,24 @@ public class UserInterface implements Runnable {
         
         textArea.setLineWrap(true);
         
-        textArea.setText("Commands: go east / west / south / north\n" + "Combat commands: attack\n");
+        textArea.setText(" Welcome Adventurer!\n" + "Commands: loot, go east/west/south/north\n" + "Combat commands: attack/defend\n\n");
+        textArea.append(" You wake up in a cold and dark dungeon and the last thing you remember was falling into a well while you \n were getting some water for your dogs...\n"
+                + " After looking around for a while, you see that it is only possible to continue either to the West or to the East.\n\n");
         
         container.add(textAreaScrollPane);
     }
     
+    /**
+     * Creates Inventory where items are shown
+     * 
+     * @param container JFrame where components are added
+     */
     private void createInventory(JFrame container) {
         inventory = new JTextArea();
         inventoryScrollPane = new JScrollPane(inventory);
         inventoryDisplay = new TextDisplay(inventory);
         
-        inventoryScrollPane.setBounds(300, 350, 100, 50);
+        inventoryScrollPane.setBounds(10, 245, 150, 60);
         inventoryScrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
         
         inventory.setLineWrap(true);
@@ -118,5 +146,9 @@ public class UserInterface implements Runnable {
     
     public TextDisplay GetInventoryDisplay() {
         return inventoryDisplay;
+    }
+    
+    public JLabel GetCommandLabel() {
+        return commandLabel;
     }
 }

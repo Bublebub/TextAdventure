@@ -1,6 +1,10 @@
 East: R3
-West: Wall
-South: R4
-North: R0
+West: R1
+South: Wall
+North: Wall
 
-Description: kolmas
+Description: You find yourself in a dark hallway, filled with tiny mushrooms.
+ They have an eerie green glow and seem to provide food for tiny insects.
+ You might not want to eat them.
+ Looking West you see a faint light, possibly coming from a campfire.
+ From the East you hear water dripping in to something made from metal...

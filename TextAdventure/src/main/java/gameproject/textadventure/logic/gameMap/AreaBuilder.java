@@ -2,6 +2,10 @@
 package gameproject.textadventure.logic.gameMap;
 
 import gameproject.textadventure.logic.RoomDataReader;
+import gameproject.textadventure.logic.character.enemies.Goblin;
+import gameproject.textadventure.logic.character.enemies.Troll;
+import gameproject.textadventure.logic.item.HealthPotion;
+import gameproject.textadventure.logic.item.Key;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,14 +25,6 @@ public class AreaBuilder {
         this.gameMap = new HashMap<>();
         this.roomAmount = rooms;
     }
-    
-    
-    /*  Current room layout:
-        [R0] [R1]
-        [R2] [R3]
-        [R4] [R5]
-    */
-    
     
     /**
      * Builds the game area
@@ -50,6 +46,9 @@ public class AreaBuilder {
             
         }
         
+        createItems();
+        createEnemies();
+        
     }
     
     
@@ -60,6 +59,28 @@ public class AreaBuilder {
         for (int i = 0; i < this.roomAmount; i++) {
             this.gameMap.put("R" + i, new Room("R" + i));
         }
+    }
+    
+    public void createItems() {
+        Key key = new Key(this);
+        HealthPotion firstPotion = new HealthPotion(30);
+        HealthPotion secondPotion = new HealthPotion(50);
+        secondPotion.setName("Grand Potion");
+        
+        this.gameMap.get("R13").setItem(key);
+        
+        this.gameMap.get("R3").setItem(firstPotion);
+        this.gameMap.get("R12").setItem(secondPotion);
+    }
+    
+    public void createEnemies() {
+        Troll troll = new Troll();
+        Goblin firstGoblin = new Goblin();
+        Goblin secondGoblin = new Goblin();
+        
+        this.gameMap.get("R1").setEnemy(troll);
+        this.gameMap.get("R12").setEnemy(firstGoblin);
+        this.gameMap.get("R14").setEnemy(secondGoblin);
     }
     
     //          -- Getters --

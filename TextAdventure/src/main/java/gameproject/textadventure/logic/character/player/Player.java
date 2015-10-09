@@ -14,7 +14,7 @@ public class Player {
     private String name;
     private int health, attack, damage, blockChance;
     private Room currentLocation;
-    private JTextArea textDisplay;
+    private JTextArea textArea;
     public Inventory inventory;
     
     
@@ -48,45 +48,56 @@ public class Player {
         enemy.setHealth(enemy.getHealth() - this.damage);
     }
     
+    /**
+     * 30% chance to block enemy attack and heal for 5 hitpoins
+     * 
+     * @return true if attack was defended
+     */
     public boolean Defend() {
         Random random = new Random();
         
         this.blockChance = random.nextInt(2);
         
         if (this.blockChance == 0) {
-            textDisplay.append("You manage to defend yourself and gain 5 hp.\n");
+            textArea.append("You manage to defend yourself and gain 5 hp.\n");
             
             if (this.health >= 95) {
                 this.health = 100;
             } else {
                 this.health += 5;
             }
-            
             return true;
         }
         
-        textDisplay.append("You failed to defend yourself!\n");
+        textArea.append("You failed to defend yourself!\n");
         
         return false;
     }
     
+    /**
+     * Gets Item from Room, if it has one
+     */
     public void LootItem() {
         if (this.currentLocation.containsItem()) {
             this.inventory.AddItem(this.currentLocation.getItem().getName(), this.currentLocation.getItem());
             this.currentLocation.setItem(null);
         } else {
-            textDisplay.append("Nothing to loot\n");
+            textArea.append("Nothing to loot\n");
         }
     }
     
+    /**
+     * Uses item from the inventory
+     * 
+     * @param command tells which item to use
+     */
     public void UseItem(String command) {
         Item item = this.inventory.SearchItem(command);
         
         if (item != null) {
             item.Use(this);
-            this.inventory.removeItem(item.getName());
         } else {
-            textDisplay.append("Not possible/n");
+            textArea.append("Not possible\n");
         }
     }
     
@@ -98,10 +109,10 @@ public class Player {
      */
     public void moveEast() {
         if (this.currentLocation.getEast() == null) {
-            textDisplay.append("Can't move there!\n");
+            textArea.append("Can't move there!\n\n");
         } else {
             this.currentLocation = this.currentLocation.getEast();
-            textDisplay.append(this.currentLocation.getDescription() + "\n");
+            textArea.append(this.currentLocation.getDescription() + "\n");
         }
     }
     
@@ -110,10 +121,10 @@ public class Player {
      */
     public void moveWest() {
         if (this.currentLocation.getWest() == null) {
-            textDisplay.append("Can't move there!\n");
+            textArea.append("Can't move there!\n\n");
         } else {
             this.currentLocation = this.currentLocation.getWest();
-            textDisplay.append(this.currentLocation.getDescription() + "\n");
+            textArea.append(this.currentLocation.getDescription() + "\n");
         }
     }
     
@@ -122,10 +133,10 @@ public class Player {
      */
     public void moveSouth() {
         if (this.currentLocation.getSouth() == null) {
-            textDisplay.append("Can't move there!\n");
+            textArea.append("Can't move there!\n\n");
         } else {
             this.currentLocation = this.currentLocation.getSouth();
-            textDisplay.append(this.currentLocation.getDescription() + "\n");
+            textArea.append(this.currentLocation.getDescription() + "\n");
         }
     }
     
@@ -134,10 +145,10 @@ public class Player {
      */
     public void moveNorth() {
         if (this.currentLocation.getNorth() == null) {
-            textDisplay.append("Can't move there!\n");
+            textArea.append("Can't move there!\n\n");
         } else {
             this.currentLocation = this.currentLocation.getNorth();
-            textDisplay.append(this.currentLocation.getDescription() + "\n");
+            textArea.append(this.currentLocation.getDescription() + "\n");
         }
     }
     
@@ -145,47 +156,26 @@ public class Player {
     //          -- Setters --
     
     
-    /**
-     * Sets JTextArea where games information is shown
-     * 
-     * @param ui UserInterface where JTextArea is created
-     */
-    public void setTextDisplay(UserInterface ui) {
-        textDisplay = ui.getTextArea();
+    public void setTextArea(UserInterface ui) {
+        textArea = ui.getTextArea();
     }
     
-    /**
-     * Sets Players name
-     * 
-     * @param newName 
-     */
+    
     public void setName(String newName) {
         this.name = newName;
     }
     
-    /**
-     * Sets players health
-     * 
-     * @param newHealth 
-     */
+    
     public void setHealth(int newHealth) {
         this.health = newHealth;
     }
     
-    /**
-     * Sets Players attack value
-     * 
-     * @param newAttack new attack value (max damage)
-     */
+    
     public void setAttack(int newAttack) {
         this.attack = newAttack;
     }
     
-    /**
-     * Sets Player to given location
-     * 
-     * @param newLocation Room
-     */
+    
     public void setLocation(Room newLocation) {
         this.currentLocation = newLocation;
     }
@@ -212,6 +202,10 @@ public class Player {
     
     public Inventory getInventory() {
         return this.inventory;
+    }
+    
+    public JTextArea getTextArea() {
+        return this.textArea;
     }
     
 }

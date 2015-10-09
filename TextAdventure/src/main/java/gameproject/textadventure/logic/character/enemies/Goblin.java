@@ -6,17 +6,17 @@ import gameproject.textadventure.logic.gameMap.Room;
 import java.util.Random;
 
 
-public class Skeleton implements Enemy {
+public class Goblin implements Enemy {
 
     private String name;
     private int health, attack, damage;
     private Room currentLocation;
     
     /**
-     * Creates Skeleton
+     * Creates a Goblin
      */
-    public Skeleton() {
-        this.name = "Skeleton";
+    public Goblin() {
+        this.name = "Goblin";
         
         this.health = 25;
         this.attack = 5;    // Max damage value
@@ -24,7 +24,7 @@ public class Skeleton implements Enemy {
     }
     
     /**
-     * Returns Skeletons name
+     * Returns Goblins name
      * 
      * @return this.name
      */
@@ -34,7 +34,7 @@ public class Skeleton implements Enemy {
     }
 
     /**
-     * Returns Skeletons health
+     * Returns Goblins health
      * 
      * @return this.health
      */
@@ -44,7 +44,7 @@ public class Skeleton implements Enemy {
     }
     
     /**
-     * Returns Skeletons attack value
+     * Returns Goblins attack value
      * 
      * @return this.attack (max damage)
      */
@@ -54,7 +54,7 @@ public class Skeleton implements Enemy {
     }
 
     /**
-     * Returns Skeletons current location
+     * Returns Goblins current location
      * 
      * @return this.currentLocation
      */
@@ -64,7 +64,7 @@ public class Skeleton implements Enemy {
     }
 
     /**
-     * Changes Skeletons name
+     * Changes Goblins name
      * 
      * @param name 
      */
@@ -74,7 +74,7 @@ public class Skeleton implements Enemy {
     }
 
     /**
-     * Changes Skeletons health value
+     * Changes Goblins health value
      * 
      * @param newHealth new health value
      */
@@ -84,7 +84,7 @@ public class Skeleton implements Enemy {
     }
 
     /**
-     * Changes Skeletons attack value
+     * Changes Goblins attack value
      * 
      * @param newAttack new attack value (max damage)
      */
@@ -94,7 +94,7 @@ public class Skeleton implements Enemy {
     }
 
     /**
-     * Sets Skeleton into new location
+     * Sets Goblin into new location
      * 
      * @param newLocation 
      */

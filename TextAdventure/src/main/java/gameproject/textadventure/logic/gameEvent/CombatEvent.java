@@ -73,7 +73,7 @@ public class CombatEvent {
      */
     public boolean PlayerDead() {
         if (this.player.getHealth() <= 0) {
-                display.append("You have been killed by " + this.enemy.getName());
+                display.append("You have been killed by " + this.enemy.getName() + "\n\n");
                 return true;
         }
         return false;
@@ -87,7 +87,7 @@ public class CombatEvent {
     public boolean EnemyDead() {
         
         if (this.enemy.getHealth() <= 0) {
-                display.append("You have slain your enemy!\n");
+                display.append("You have slain your enemy!\n\n");
                 return true;
         }
         return false;

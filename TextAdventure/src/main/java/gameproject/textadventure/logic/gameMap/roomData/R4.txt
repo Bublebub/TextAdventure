@@ -1,6 +1,7 @@
-East: R5
+East: Wall
 West: Wall
-South: Wall
-North: R2
+South: R6
+North: R1
 
-Description: viides
+Description: You find yourself in another dark hallway, and feel like someone is watching you...
+ You see a faint light coming from the North, and feel a slight breeze from the South.

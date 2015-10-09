@@ -19,7 +19,7 @@ public class PlayerTest {
     
     @Before
     public void setUp() {
-        this.mapMaker = new AreaBuilder(6);
+        this.mapMaker = new AreaBuilder(18);
         this.reader = new InputReader();
         this.ui = new UserInterface(this.reader);
         
@@ -29,20 +29,20 @@ public class PlayerTest {
             System.out.println("Didn't work");
         }
         
-        this.player = new Player((Room) this.mapMaker.getGameMap().get("R0"));
+        this.player = new Player((Room) this.mapMaker.getGameMap().get("R16"));
         
         this.reader.setPlayer(this.player);
         
         ui.run();
         
-        player.setTextDisplay(ui);
+        player.setTextArea(ui);
         
     }
     
     
     @Test
     public void ConstructorSetsPlayerToStartRoom() {
-        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R16"), this.player.getLocation());
     }
     
     
@@ -52,21 +52,21 @@ public class PlayerTest {
     @Test
     public void playerCanMoveToEastRoomFromStart() {
         this.player.moveEast();
-        assertEquals(this.mapMaker.getGameMap().get("R1"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R17"), this.player.getLocation());
     }
     
     @Test
-    public void playerCanMoveToSouthRoomFromStart() {
-        this.player.moveSouth();
-        assertEquals(this.mapMaker.getGameMap().get("R2"), this.player.getLocation());
-    }
-    
-    @Test
-    public void playerCanNotMoveToWestFromStart() {
+    public void playerCanMoveToWestRoomFromStart() {
         this.player.moveWest();
+        assertEquals(this.mapMaker.getGameMap().get("R15"), this.player.getLocation());
+    }
+    
+    @Test
+    public void playerCanNotMoveToSouthFromStart() {
+        this.player.moveSouth();
         
         // If player can't move, currentLocation stays the same
-        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R16"), this.player.getLocation());
     }
     
     @Test
@@ -74,7 +74,7 @@ public class PlayerTest {
         this.player.moveNorth();
         
         // If player can't move, currentLocation stays the same
-        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R16"), this.player.getLocation());
     }
     
     
@@ -82,40 +82,40 @@ public class PlayerTest {
     
     
     @Test
-    public void playerCanMoveToWestFromOtherRoom() {
-        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R1"));
+    public void playerCanNotMoveToWestFromOtherRoom() {
+        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R11"));
         
         this.player.moveWest();
         
-        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R11"), this.player.getLocation());
     }
     
     @Test
     public void playerCanMoveToNorthFromOtherRoom() {
-        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R2"));
+        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R15"));
         
         this.player.moveNorth();
         
-        assertEquals(this.mapMaker.getGameMap().get("R0"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R11"), this.player.getLocation());
     }
     
     
     @Test
     public void playerCanNotMoveToEastFromOtherRoom() {
-        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R5"));
+        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R17"));
         
         this.player.moveEast();
         
-        assertEquals(this.mapMaker.getGameMap().get("R5"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R17"), this.player.getLocation());
     }
     
     @Test
-    public void playerCanNotMoveToSouthFromOtherRoom() {
-        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R5"));
+    public void playerCanMoveToSouthFromOtherRoom() {
+        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R11"));
         
         this.player.moveSouth();
         
-        assertEquals(this.mapMaker.getGameMap().get("R5"), this.player.getLocation());
+        assertEquals(this.mapMaker.getGameMap().get("R15"), this.player.getLocation());
     }
     
     

@@ -15,6 +15,10 @@ public class HealthPotion implements Item {
         description = "Heals for " + healAmount + " hp";
     }
     
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     @Override
     public String getName() {
         return name;
@@ -34,6 +38,8 @@ public class HealthPotion implements Item {
         if (player.getHealth() > 100) {
             player.setHealth(100);
         }
+        
+        player.inventory.removeItem(name);
         
     }
     

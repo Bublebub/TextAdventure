@@ -97,7 +97,7 @@ public class RoomDataReader {
             String description = "";
             
             while (this.scanner.hasNextLine()) {
-                description += this.scanner.nextLine();
+                description += this.scanner.nextLine() + "\n";
             }
             
             room.setDescription(description);

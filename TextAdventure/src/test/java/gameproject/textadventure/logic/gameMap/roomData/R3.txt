@@ -1,6 +1,9 @@
 East: Wall
 West: R2
 South: R5
-North: R1
+North: Wall
 
-Description: neljas
+Description: You enter a dark room, filled with small goblin skeletons.
+ The floor is filthy, full of mud and gore...
+ Water droplets from the ceiling are hitting against a tiny iron helmet, it seems that the ceiling might not last for long.
+ Looking around you see two hallways, one to the East, one to the South.

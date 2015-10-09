@@ -1,5 +1,6 @@
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\RoomDataReader.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\item\Item.java
+C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\character\enemies\Goblin.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\character\player\Inventory.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\character\player\Player.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\GameMain.java
@@ -11,5 +12,6 @@ C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gamep
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\gameMap\AreaBuilder.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\userInterface\UserInterface.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\character\enemies\Enemy.java
-C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\character\enemies\Skeleton.java
+C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\character\enemies\Troll.java
 C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\userInterface\components\TextDisplay.java
+C:\Users\Elmeri\Documents\GitHub\TextAdventure\TextAdventure\src\main\java\gameproject\textadventure\logic\item\Key.java

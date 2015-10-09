@@ -1,6 +1,7 @@
-East: R1
+East: Wall
 West: Wall
 South: R2
 North: Wall
 
-Description: eka
+Description: You enter into a small room filled with burning candles and skulls.
+ In one of the corners you see a small chest, stained with blood.

@@ -2,7 +2,7 @@
 package gameproject.textadventure.logic.gameEvent;
 
 import gameproject.textadventure.logic.character.enemies.Enemy;
-import gameproject.textadventure.logic.character.enemies.Skeleton;
+import gameproject.textadventure.logic.character.enemies.Goblin;
 import gameproject.textadventure.logic.character.player.Player;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
@@ -18,7 +18,7 @@ public class CombatEventTest {
     @Before
     public void setUp() {
         this.player = new Player(null);
-        this.enemy = new Skeleton();
+        this.enemy = new Goblin();
         this.combat = new CombatEvent(this.player, this.enemy);
     }
     

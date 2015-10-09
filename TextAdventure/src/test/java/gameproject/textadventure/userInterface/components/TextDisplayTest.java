@@ -20,7 +20,7 @@ public class TextDisplayTest {
     
     @Before
     public void setUp() {
-        this.mapMaker = new AreaBuilder(6);
+        this.mapMaker = new AreaBuilder(18);
         this.reader = new InputReader();
         this.ui = new UserInterface(this.reader);
         
@@ -30,31 +30,32 @@ public class TextDisplayTest {
             System.out.println("Didn't work");
         }
         
-        this.player = new Player((Room) this.mapMaker.getGameMap().get("R0"));
+        this.player = new Player((Room) this.mapMaker.getGameMap().get("R16"));
         
         this.reader.setPlayer(this.player);
         
         ui.run();
         
-        player.setTextDisplay(ui);
+        player.setTextArea(ui);
     }
     
     @Test
     public void TextDisplayShowsRightTextWhenNotPossibleToMoveEast() {
-        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R5"));
+        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R17"));
         this.player.moveEast();
         assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n");
     }
     
     @Test
     public void TextDisplayShowsRightTextWhenNotPossibleToMoveSouth() {
-        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R5"));
+        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R17"));
         this.player.moveSouth();
         assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n");
     }
     
     @Test
     public void TextDisplayShowsRightTextWhenNotPossibleToMoveWest() {
+        this.player.setLocation((Room) this.mapMaker.getGameMap().get("R13"));
         this.player.moveWest();
         assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n");
     }

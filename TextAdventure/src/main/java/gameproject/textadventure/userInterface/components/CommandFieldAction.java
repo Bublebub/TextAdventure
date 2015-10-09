@@ -49,7 +49,7 @@ public class CommandFieldAction implements ActionListener {
     public void CheckForCombat() {
         if (reader.inCombat && this.inCombat == false) {
             SwitchToCombat();
-        } 
+        }
     }
     
     /**
