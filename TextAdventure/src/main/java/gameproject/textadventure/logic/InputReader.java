@@ -31,6 +31,7 @@ public class InputReader {
             
         movementCommands(command);
         checkRoomForEnemy();
+        otherCommands(command);
     }
     
     /**
@@ -68,6 +69,15 @@ public class InputReader {
         } else if (command.equals("go north")) {
             this.player.moveNorth();
             
+        }
+    }
+    
+    private void otherCommands(String command) {
+        
+        if (command.equals("loot")) {
+            this.player.LootItem();
+        } else if (command.startsWith("use")) {
+            this.player.UseItem(command);
         }
     }
     

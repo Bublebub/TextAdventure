@@ -39,6 +39,15 @@ public class Room {
         return false;
     }
     
+    public boolean containsItem() {
+        if (this.item != null) {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    
     //              -- Setters --
     
     /**

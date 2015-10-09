@@ -11,27 +11,41 @@ public class Inventory {
     
     
     private TextDisplay itemDisplay;
-    private Map<String, Item> itemMap;
+    private Map<String, Item> itemMap = new HashMap<>();
     
     public void Inventory() {
-        this.itemMap = new HashMap<>();
         this.itemDisplay = null;
     }
     
-    public void refreshItemDisplay() {
+    public Item SearchItem(String command) {
+        String wanted = command.substring(4);
+        
+        for (String itemName : this.itemMap.keySet()) {
+            if (wanted.equals(itemName.toLowerCase())) {
+                return this.itemMap.get(itemName);
+            }
+        }
+        
+        return null;
+    }
+    
+    
+    
+    public void RefreshItemDisplay() {
+        this.itemDisplay.ClearDisplay();
+        for (String name : this.itemMap.keySet()) {
+            this.itemDisplay.AddLine(name + "\n");
+        }
     }
     
     public void AddItem(String name, Item item) {
-        
-        // toimii, jos on Map<S, I> itemMap = new HashMap()
-        
         this.itemMap.put(name, item);
         this.itemDisplay.AddLine(name + "\n");
     }
     
     public void removeItem(String name) {
         this.itemMap.remove(name);
-        
+        RefreshItemDisplay();
     }
     
     //      -- Setters --

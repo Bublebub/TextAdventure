@@ -25,17 +25,16 @@ public class HealthPotion implements Item {
         return description;
     }
 
-    /**
-     * Heals targeted Player
-     * 
-     * @param player healing target
-     */
-    public void drink(Player player) {
+    
+
+    @Override
+    public void Use(Player player) {
         player.setHealth(player.getHealth() + healAmount);
         
         if (player.getHealth() > 100) {
             player.setHealth(100);
         }
+        
     }
     
     

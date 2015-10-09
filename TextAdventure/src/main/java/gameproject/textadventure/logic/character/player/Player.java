@@ -3,7 +3,7 @@ package gameproject.textadventure.logic.character.player;
 
 import gameproject.textadventure.logic.character.enemies.Enemy;
 import gameproject.textadventure.logic.gameMap.Room;
-import gameproject.textadventure.logic.item.HealthPotion;
+import gameproject.textadventure.logic.item.Item;
 import gameproject.textadventure.userInterface.UserInterface;
 import java.util.Random;
 import javax.swing.JTextArea;
@@ -31,6 +31,9 @@ public class Player {
         this.currentLocation = start;
         this.inventory = new Inventory();
     }
+    
+    
+    //      -- Combat --
     
     /**
      * Damages the health of targeted Enemy
@@ -67,6 +70,25 @@ public class Player {
         return false;
     }
     
+    public void LootItem() {
+        if (this.currentLocation.containsItem()) {
+            this.inventory.AddItem(this.currentLocation.getItem().getName(), this.currentLocation.getItem());
+            this.currentLocation.setItem(null);
+        } else {
+            textDisplay.append("Nothing to loot\n");
+        }
+    }
+    
+    public void UseItem(String command) {
+        Item item = this.inventory.SearchItem(command);
+        
+        if (item != null) {
+            item.Use(this);
+            this.inventory.removeItem(item.getName());
+        } else {
+            textDisplay.append("Not possible/n");
+        }
+    }
     
     
     //          -- Movement --
@@ -120,8 +142,8 @@ public class Player {
     }
     
     
-    
     //          -- Setters --
+    
     
     /**
      * Sets JTextArea where games information is shown

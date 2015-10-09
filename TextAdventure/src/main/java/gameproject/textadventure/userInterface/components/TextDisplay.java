@@ -16,6 +16,10 @@ public class TextDisplay {
     public void AddLine(String line) {
         this.display.append(line);
     }
+    
+    public void ClearDisplay() {
+        this.display.setText("");
+    }
 
     
 }
