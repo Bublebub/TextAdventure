@@ -1,0 +1,6 @@
+East: Wall
+West: R9
+South: Wall
+North: Wall
+
+Description: You arrive at a small fishing town.

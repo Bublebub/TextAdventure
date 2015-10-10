@@ -1,0 +1,8 @@
+East: R8
+West: R6
+South: Wall
+North: Wall
+
+Description: You step into a hallway filled with spider webs and moss.
+ After looking around you see that you can continue the hallway to West or 
+go East where you see some sunlight coming in.

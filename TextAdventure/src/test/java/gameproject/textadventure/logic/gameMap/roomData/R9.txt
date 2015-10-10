@@ -1,0 +1,7 @@
+East: R10
+West: R8
+South: Wall
+North: Wall
+
+Description: You arrive at the dungeons entrance.
+ You can continue to East towards a town or go down to the dungeon in West.

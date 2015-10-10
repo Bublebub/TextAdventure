@@ -1,0 +1,9 @@
+East: R16
+West: R14
+South: Wall
+North: R11
+
+Description: You enter a small cave, which seems to be inhabited by tiny frogs.
+ The amount of flies and other insects is quite astonishing.
+ Looking around you see an entrance to a hallway in the West and to a room in North.
+ To the East you see the place where you came down to the dungeon.

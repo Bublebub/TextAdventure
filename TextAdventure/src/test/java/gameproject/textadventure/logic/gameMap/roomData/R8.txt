@@ -1,0 +1,9 @@
+East: R9
+West: R7
+South: R12
+North: R5
+
+Description: You arrive at the bottom of stairs, to a great cave.
+ It smells like someone (or something) had just died here..
+ After a while you see that you can continue on to one of three hallways:
+ one going South, others going West and North. Looking East you see a staircase.

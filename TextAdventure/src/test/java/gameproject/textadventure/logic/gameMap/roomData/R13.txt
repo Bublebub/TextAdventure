@@ -1,0 +1,8 @@
+East: R14
+West: Wall
+South: Wall
+North: Wall
+
+Description: You enter a small room filled with dead rats and dried fish.
+ The smell of this room makes you want to leave it immediately and head back to East, 
+but there might be something interesting in here..

@@ -1,0 +1,7 @@
+East: R17
+West: R15
+South: Wall
+North: Wall
+
+Description: You arrive at the bottom of the well where you first entered the dungeon.
+ Looking around you can see that you can continue to the East into a cave, or you can continue to the West in to a dark hallway.
