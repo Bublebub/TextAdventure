@@ -47,4 +47,4 @@ CombatEvent siirretty toimimaan uuteen käyttöliittymään, muutama luokka ja t
 Bugin metsästystä, aikaa kului n. 5 tuntia.
 
 #9-10.10.2015
-Bugien korjausta, luokkien ja toiminnallisuuksien lisäystä/muokkausta. Aikaa kului n. 8-10 tuntia.
+Bugien korjausta, luokkien ja toiminnallisuuksien lisäystä/muokkausta sekä README:n päivitys. Aikaa kului n. 8-10 tuntia.
