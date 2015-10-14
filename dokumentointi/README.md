@@ -11,8 +11,11 @@ Pelaajalle annetaan liikkumiskomentoja kirjoittamalla "go" + haluttu liikkumissu
 ###Loot
 Pelaajalle annettava käsky "loot" etsii pelaajan kyseisestä olinpaikasta tavaran ja lisää sen tavaraluetteloon (jos huoneessa on tavara).
 
+###Esineiden käyttäminen
+Esineitä käytetään tavaraluettelosta komennolla "use " + esineen nimi. 
+
 ###Taistelu
-Taistelussa pelaaja voi syöttää vain "attack" tai "defend" komentoja, kunnes vihollinen kuolee. "attack" vähentää vihollisen hp:ta onnistuessaan, "defend" kumoaa vihollisen hyökkäyksen ja palauttaa pelaajalle 5 hp:ta onnistuessaan (onnistumisen mahdollisuus on 30%).
+Taistelussa pelaaja voi syöttää **vain** "attack" tai "defend" komentoja, kunnes vihollinen kuolee. "attack" vähentää vihollisen hp:ta onnistuessaan, "defend" kumoaa vihollisen hyökkäyksen ja palauttaa pelaajalle 5 hp:ta onnistuessaan (onnistumisen mahdollisuus on 30%).
 
 ##Pelin kartta
 1. [-] [-] [**H**] [-] [-] [-] [-]
