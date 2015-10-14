@@ -48,3 +48,6 @@ Bugin metsästystä, aikaa kului n. 5 tuntia.
 
 #9-10.10.2015
 Bugien korjausta, luokkien ja toiminnallisuuksien lisäystä/muokkausta sekä README:n päivitys. Aikaa kului n. 8-10 tuntia.
+
+#14.10.2015
+Tekstin tulostus korjattu, nappeja lisätty ja toiminta korjattu, koodia siistitty. Aikaa kului 2-3 tuntia.
