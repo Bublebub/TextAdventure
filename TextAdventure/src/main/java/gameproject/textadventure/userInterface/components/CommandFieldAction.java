@@ -24,48 +24,18 @@ public class CommandFieldAction implements ActionListener {
         reader = input;
         inCombat = false;
         ui = newUI;
-        
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        CheckForCombat();
-        
-        if (this.inCombat) {
-            this.inCombat = !battle.ExecuteCombatRound(getCommand());
+        if (reader.inCombat && (reader.battle != null)) {
+            this.inCombat = !reader.battle.ExecuteCombatRound(getCommand());
             reader.inCombat = this.inCombat;
         } else {
             reader.ExecuteCommand(getCommand());
         }
         
-        CheckForCombat();
-        
     }
-    
-    /**
-     * Checks if combat should be started
-     */
-    public void CheckForCombat() {
-        if (reader.inCombat && this.inCombat == false) {
-            SwitchToCombat();
-        }
-    }
-    
-    /**
-     * inCombat is changed so that commands go to CombatEvent
-     * 
-     * Name of the Enemy is printed in JTextArea indicating its appearance
-     * 
-     */
-    public void SwitchToCombat() {
-        this.inCombat = true;
-        this.battle = reader.battle;
-        this.battle.SetTextDisplay(ui.getTextArea());
-        this.ui.getTextArea().append(this.battle.GetEnemy().getName() + " appears!\n");
-        
-    }
-    
     
     //      -- Getters --
     

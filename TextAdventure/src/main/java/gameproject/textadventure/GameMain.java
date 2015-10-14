@@ -34,6 +34,8 @@ public class GameMain {
         player.setTextArea(ui);
         player.inventory.SetInventoryDisplay(ui.GetInventoryDisplay());
         
+        input.setTextArea(ui.getTextArea());
+        
     }
     
 }

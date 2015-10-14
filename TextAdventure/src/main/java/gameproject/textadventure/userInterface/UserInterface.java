@@ -15,6 +15,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import static javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS;
 import javax.swing.WindowConstants;
+import javax.swing.text.DefaultCaret;
 
 public class UserInterface implements Runnable {
     
@@ -58,7 +59,6 @@ public class UserInterface implements Runnable {
         
         frame.pack();
         
-        
     }
     
     /**
@@ -98,7 +98,7 @@ public class UserInterface implements Runnable {
         
         textField.addActionListener(new CommandFieldAction(textField, this.reader, this));
         
-        textField.setBounds(10, 215, 250, 22);
+        textField.setBounds(10, 215, 220, 22);
         
         container.add(textField);
     }
@@ -114,11 +114,14 @@ public class UserInterface implements Runnable {
         textDisplay = new TextDisplay(textArea);
         
         textAreaScrollPane.setBounds(10, 10, 615, 180);
-        textAreaScrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
         
         textArea.setLineWrap(true);
         
-        textArea.setText(" Welcome Adventurer!\n" + "Commands: loot, go east/west/south/north\n" + "Combat commands: attack/defend\n\n");
+        //Updates textAreas position
+        DefaultCaret caret = (DefaultCaret) textArea.getCaret();
+        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+        
+        textArea.setText(" Welcome Adventurer!\n" + " Commands: go east/west/south/north, loot, use \"item name\"\n" + " Combat commands: attack/defend\n\n");
         textArea.append(" You wake up in a cold and dark dungeon and the last thing you remember was falling into a well while you \n were getting some water for your dogs...\n"
                 + " After looking around for a while, you see that it is only possible to continue either to the West or to the East.\n\n");
         
@@ -135,7 +138,7 @@ public class UserInterface implements Runnable {
         inventoryScrollPane = new JScrollPane(inventory);
         inventoryDisplay = new TextDisplay(inventory);
         
-        inventoryScrollPane.setBounds(10, 245, 150, 60);
+        inventoryScrollPane.setBounds(300, 215, 130, 80);
         inventoryScrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
         
         inventory.setLineWrap(true);
@@ -155,20 +158,32 @@ public class UserInterface implements Runnable {
         lootBtn.addActionListener(new ButtonAction("loot", this, this.reader));
         
         ButtonPositionSetup();
+        AddingButtons(container);
         
+    }
+    
+    public void ButtonPositionSetup() {
+        eastBtn.setBounds(535, 240, 90, 30);
+        westBtn.setBounds(445, 240, 90, 30);
+        southBtn.setBounds(490, 270, 90, 30);
+        northBtn.setBounds(490, 210, 90, 30);
+        
+        attackBtn.setBounds(20, 245, 90, 30);
+        defendBtn.setBounds(20, 275, 90, 30);
+        
+        lootBtn.setBounds(130, 260, 90, 30);
+        
+    }
+    
+    public void AddingButtons(JFrame container) {
         container.add(eastBtn);
         container.add(westBtn);
         container.add(southBtn);
         container.add(northBtn);
+        container.add(attackBtn);
+        container.add(defendBtn);
+        container.add(lootBtn);
     }
-    
-    public void ButtonPositionSetup() {
-        eastBtn.setBounds(390, 240, 90, 30);
-        westBtn.setBounds(300, 240, 90, 30);
-        southBtn.setBounds(345, 270, 90, 30);
-        northBtn.setBounds(345, 210, 90, 30);
-    }
-    
     
     //      -- Setters --
     

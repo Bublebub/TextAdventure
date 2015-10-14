@@ -11,6 +11,7 @@ public class ButtonAction implements ActionListener {
     private String command;
     private UserInterface ui;
     private InputReader reader;
+    private boolean inCombat;
     
     public ButtonAction(String text, UserInterface newUI, InputReader input) {
         this.command = text;
@@ -20,10 +21,11 @@ public class ButtonAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (this.command.startsWith("go") || this.command.equals("loot")) {
-            reader.ExecuteCommand(command);
+        if (reader.inCombat && (reader.battle != null)) {
+            this.inCombat = !reader.battle.ExecuteCombatRound(this.command);
+            reader.inCombat = this.inCombat;
         } else {
-            
+            reader.ExecuteCommand(this.command);
         }
     }
 }

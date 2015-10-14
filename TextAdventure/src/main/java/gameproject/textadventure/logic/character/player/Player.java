@@ -97,7 +97,7 @@ public class Player {
         if (item != null) {
             item.Use(this);
         } else {
-            textArea.append("Not possible\n");
+            textArea.append("Not possible\n\n");
         }
     }
     
