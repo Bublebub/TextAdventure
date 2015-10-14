@@ -3,9 +3,11 @@ package gameproject.textadventure.userInterface;
 
 import gameproject.textadventure.logic.InputReader;
 import gameproject.textadventure.logic.character.player.Player;
+import gameproject.textadventure.userInterface.components.ButtonAction;
 import gameproject.textadventure.userInterface.components.CommandFieldAction;
 import gameproject.textadventure.userInterface.components.TextDisplay;
 import java.awt.Dimension;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -27,6 +29,14 @@ public class UserInterface implements Runnable {
     JTextArea textArea, inventory;
     JScrollPane textAreaScrollPane, inventoryScrollPane;
     TextDisplay textDisplay, inventoryDisplay;
+    
+    JButton eastBtn = new JButton("go East"),
+            westBtn = new JButton("go West"),
+            southBtn = new JButton("go South"),
+            northBtn = new JButton("go North"),
+            attackBtn = new JButton("Attack"),
+            defendBtn = new JButton("Defend"),
+            lootBtn = new JButton("Loot");
     
     public UserInterface(InputReader inputReader) {
         this.reader = inputReader;
@@ -61,6 +71,7 @@ public class UserInterface implements Runnable {
         createCommandField(container);
         createTextDisplayArea(container);
         createInventory(container);
+        createButtons(container);
     }
     
     /**
@@ -131,6 +142,33 @@ public class UserInterface implements Runnable {
         
         container.add(inventoryScrollPane);
     }
+    
+    public void createButtons(JFrame container) {
+        eastBtn.addActionListener(new ButtonAction("go east", this, this.reader));
+        westBtn.addActionListener(new ButtonAction("go west", this, this.reader));
+        southBtn.addActionListener(new ButtonAction("go south", this, this.reader));
+        northBtn.addActionListener(new ButtonAction("go north", this, this.reader));
+        
+        attackBtn.addActionListener(new ButtonAction("attack", this, this.reader));
+        defendBtn.addActionListener(new ButtonAction("defend", this, this.reader));
+        
+        lootBtn.addActionListener(new ButtonAction("loot", this, this.reader));
+        
+        ButtonPositionSetup();
+        
+        container.add(eastBtn);
+        container.add(westBtn);
+        container.add(southBtn);
+        container.add(northBtn);
+    }
+    
+    public void ButtonPositionSetup() {
+        eastBtn.setBounds(390, 240, 90, 30);
+        westBtn.setBounds(300, 240, 90, 30);
+        southBtn.setBounds(345, 270, 90, 30);
+        northBtn.setBounds(345, 210, 90, 30);
+    }
+    
     
     //      -- Setters --
     

@@ -13,7 +13,6 @@ import gameproject.textadventure.logic.gameEvent.CombatEvent;
 public class InputReader {
 
     private Player player;
-    public String commandt;
     public boolean inCombat;    // Used to check if player is in combat
     public CombatEvent battle;
     
@@ -102,7 +101,6 @@ public class InputReader {
     public void setPlayer(Player player) {
         this.player = player;
     }
-    
     
     //      -- Getters --
     
