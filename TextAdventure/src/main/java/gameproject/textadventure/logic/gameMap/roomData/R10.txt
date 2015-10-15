@@ -3,4 +3,5 @@ West: R9
 South: Wall
 North: Wall
 
-Description: You arrive at a small fishing town.
+Description: You arrive at the caves entrance, but it is blocked by three massive boulders.
+You can only go back down the stairs to West.

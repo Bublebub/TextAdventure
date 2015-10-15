@@ -11,7 +11,6 @@ import gameproject.textadventure.userInterface.UserInterface;
 
 public class GameMain {
 
-
     public static void main(String[] args) {
         
         AreaBuilder area = new AreaBuilder(18);
@@ -31,10 +30,12 @@ public class GameMain {
         
         ui.run();
         
+        input.setTextArea(ui.getTextArea());
+        
         player.setTextArea(ui);
         player.inventory.SetInventoryDisplay(ui.GetInventoryDisplay());
         
-        input.setTextArea(ui.getTextArea());
+        
         
     }
     

@@ -6,6 +6,7 @@ import gameproject.textadventure.logic.character.enemies.Goblin;
 import gameproject.textadventure.logic.character.enemies.Troll;
 import gameproject.textadventure.logic.item.HealthPotion;
 import gameproject.textadventure.logic.item.Key;
+import gameproject.textadventure.logic.item.Rope;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -63,12 +64,13 @@ public class AreaBuilder {
     
     public void createItems() {
         Key key = new Key(this);
+        Rope rope = new Rope(this);
         HealthPotion firstPotion = new HealthPotion(30);
         HealthPotion secondPotion = new HealthPotion(50);
         secondPotion.setName("Grand Potion");
         
+        this.gameMap.get("R0").setItem(rope);
         this.gameMap.get("R13").setItem(key);
-        
         this.gameMap.get("R3").setItem(firstPotion);
         this.gameMap.get("R12").setItem(secondPotion);
     }

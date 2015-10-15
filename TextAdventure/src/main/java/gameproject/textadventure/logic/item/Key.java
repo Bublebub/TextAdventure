@@ -12,19 +12,12 @@ public class Key implements Item {
     
     public Key(AreaBuilder area) {
         this.name = "Key";
-        this.description = "Opens a wooden door";
-        
         this.area = area;
     }
     
     @Override
     public String getName() {
         return this.name;
-    }
-
-    @Override
-    public String getDescription() {
-        return this.description;
     }
 
     @Override
@@ -40,9 +33,10 @@ public class Key implements Item {
             roomSouth.setNorth(roomNorth);
             roomNorth.setSouth(roomSouth);
             
+            player.getTextArea().append("You use " + name + " to unlock the door\n\n");
             player.inventory.removeItem(name);
         } else {
-            player.getTextArea().append("Can't use this here\n\n");
+            player.getTextArea().append("Can't use this here...\n\n");
         }
         
         

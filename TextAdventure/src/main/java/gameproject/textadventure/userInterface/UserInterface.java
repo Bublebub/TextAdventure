@@ -22,7 +22,7 @@ public class UserInterface implements Runnable {
     JFrame frame;
     Player player;
     
-    JLabel commandLabel;
+    JLabel commandLabel, inventoryLabel;
     
     InputReader reader;
     JTextField textField;
@@ -38,6 +38,7 @@ public class UserInterface implements Runnable {
             attackBtn = new JButton("Attack"),
             defendBtn = new JButton("Defend"),
             lootBtn = new JButton("Loot");
+    
     
     public UserInterface(InputReader inputReader) {
         this.reader = inputReader;
@@ -67,7 +68,7 @@ public class UserInterface implements Runnable {
      * @param container JFrame where components are added
      */
     private void createComponents(JFrame container) {
-        createLabel(container);
+        createLabels(container);
         createCommandField(container);
         createTextDisplayArea(container);
         createInventory(container);
@@ -79,13 +80,15 @@ public class UserInterface implements Runnable {
      * 
      * @param container JFrame where components are added
      */
-    private void createLabel(JFrame container) {
-        commandLabel = new JLabel();
+    private void createLabels(JFrame container) {
+        commandLabel = new JLabel("Commandfield");
+        inventoryLabel = new JLabel("Inventory");
         
-        commandLabel.setText("Commandfield");
-        commandLabel.setBounds(10, 193, 250, 22);
+        commandLabel.setBounds(10, 193, 90, 22);
+        inventoryLabel.setBounds(265, 193, 80, 22);
         
         container.add(commandLabel);
+        container.add(inventoryLabel);
     }
     
     /**
@@ -138,7 +141,7 @@ public class UserInterface implements Runnable {
         inventoryScrollPane = new JScrollPane(inventory);
         inventoryDisplay = new TextDisplay(inventory);
         
-        inventoryScrollPane.setBounds(300, 215, 130, 80);
+        inventoryScrollPane.setBounds(265, 215, 130, 80);
         inventoryScrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
         
         inventory.setLineWrap(true);
@@ -146,6 +149,11 @@ public class UserInterface implements Runnable {
         container.add(inventoryScrollPane);
     }
     
+    /**
+     * Creates all buttons
+     * 
+     * @param container JFrame where components are added
+     */
     public void createButtons(JFrame container) {
         eastBtn.addActionListener(new ButtonAction("go east", this, this.reader));
         westBtn.addActionListener(new ButtonAction("go west", this, this.reader));
@@ -162,19 +170,24 @@ public class UserInterface implements Runnable {
         
     }
     
+    /**
+     * Assigns buttons position
+     */
     public void ButtonPositionSetup() {
         eastBtn.setBounds(535, 240, 90, 30);
         westBtn.setBounds(445, 240, 90, 30);
         southBtn.setBounds(490, 270, 90, 30);
         northBtn.setBounds(490, 210, 90, 30);
-        
         attackBtn.setBounds(20, 245, 90, 30);
         defendBtn.setBounds(20, 275, 90, 30);
-        
         lootBtn.setBounds(130, 260, 90, 30);
-        
     }
     
+    /**
+     * Adds buttons to given container
+     * 
+     * @param container given JFrame
+     */
     public void AddingButtons(JFrame container) {
         container.add(eastBtn);
         container.add(westBtn);
@@ -192,6 +205,10 @@ public class UserInterface implements Runnable {
     }
     
     //      -- Getters --
+    
+    public Player GetPlayer() {
+        return player;
+    }
     
     public JTextArea getTextArea() {
         return textArea;

@@ -6,13 +6,12 @@ import gameproject.textadventure.logic.character.player.Player;
 
 public class HealthPotion implements Item {
 
-    private String name, description;
+    private String name;
     private int healAmount;
     
     public HealthPotion(int hp) {
         name = "Health Potion";
         healAmount = hp;
-        description = "Heals for " + healAmount + " hp";
     }
     
     public void setName(String name) {
@@ -25,24 +24,15 @@ public class HealthPotion implements Item {
     }
 
     @Override
-    public String getDescription() {
-        return description;
-    }
-
-    
-
-    @Override
     public void Use(Player player) {
         player.setHealth(player.getHealth() + healAmount);
+        player.getTextArea().append(name + " heals you for " + healAmount + "hp" + "\n\n");
         
         if (player.getHealth() > 100) {
             player.setHealth(100);
         }
         
         player.inventory.removeItem(name);
-        
     }
-    
-    
     
 }

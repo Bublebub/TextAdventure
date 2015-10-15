@@ -1,6 +1,6 @@
 East: Wall
 West: Wall
-South: R2
+South: R1
 North: Wall
 
 Description: You enter into a small room filled with burning candles and skulls.
