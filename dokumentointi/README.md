@@ -18,7 +18,7 @@ Esineitä käytetään tavaraluettelosta komennolla "use " + esineen nimi.
 Taistelussa pelaaja voi syöttää **vain** "attack" tai "defend" komentoja, kunnes vihollinen kuolee. "attack" vähentää vihollisen hp:ta onnistuessaan, "defend" kumoaa vihollisen hyökkäyksen ja palauttaa pelaajalle 5 hp:ta onnistuessaan (onnistumisen mahdollisuus on 30%).
 
 ##Pelin kartta
-1. [-] [-] [**H**] [-] [-] [-] [-]
+1. [-] [-] [**H/L**] [-] [-] [-] [-]
 2. [-] [-] [**V**] [**H**] [**L**] [-] [-]
 3. [-] [-] [**H**] [-] [**H**] [-] [-]
 4. [-] [-] [**H**] [**H**] [**H**] [**H**] [**H**]
