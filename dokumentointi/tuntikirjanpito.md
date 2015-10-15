@@ -51,3 +51,6 @@ Bugien korjausta, luokkien ja toiminnallisuuksien lisäystä/muokkausta sekä RE
 
 #14.10.2015
 Tekstin tulostus korjattu, nappeja lisätty ja toiminta korjattu, koodia siistitty. Aikaa kului 2-3 tuntia.
+
+#15.10.2015
+Ohjelma tehty loppuun, koodia siistitty, luokkakaavio, pit sekä JavaDoc päivitetty. .Jar tiedosto yritetty luoda, siinä vielä ongelma. Aikaa kului n. 6 tuntia. 
