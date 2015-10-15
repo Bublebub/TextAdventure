@@ -15,7 +15,6 @@ public class CommandFieldAction implements ActionListener {
     private String command;
     private InputReader reader;
     private JTextField commandField;
-    private boolean inCombat;     // Used to check if player is in combat
     private CombatEvent battle;
     private UserInterface ui;
     private Player player;
@@ -24,9 +23,8 @@ public class CommandFieldAction implements ActionListener {
         this.commandField = commandField;
         this.command = commandField.getText();
         this.reader = input;
-        this.inCombat = false;
         this.ui = newUI;
-        this.player = newUI.GetPlayer();
+        this.player = newUI.getPlayer();
     }
     
     @Override
@@ -34,8 +32,7 @@ public class CommandFieldAction implements ActionListener {
         
         if (this.player.getHealth() > 0) {
             if (reader.inCombat && (reader.battle != null)) {
-                this.inCombat = !reader.battle.ExecuteCombatRound(getCommand());
-                reader.inCombat = this.inCombat;
+                reader.inCombat = !reader.battle.executeCombatRound(getCommand());
             } else {
                 reader.ExecuteCommand(getCommand());
             }
@@ -47,6 +44,7 @@ public class CommandFieldAction implements ActionListener {
     
     public String getCommand() {
         command = commandField.getText();
+        commandField.setText("");
         return command;
     }
 }

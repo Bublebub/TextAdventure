@@ -19,7 +19,7 @@ public class ButtonAction implements ActionListener {
         this.command = text;
         this.ui = newUI;
         this.reader = input;
-        this.player = newUI.GetPlayer();
+        this.player = newUI.getPlayer();
     }
 
     @Override
@@ -27,7 +27,7 @@ public class ButtonAction implements ActionListener {
         
         if (this.player.getHealth() > 0) {
             if (reader.inCombat && (reader.battle != null)) {
-                this.inCombat = !reader.battle.ExecuteCombatRound(this.command);
+                this.inCombat = !reader.battle.executeCombatRound(this.command);
                 reader.inCombat = this.inCombat;
             } else {
                 reader.ExecuteCommand(this.command);

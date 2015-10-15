@@ -10,7 +10,7 @@ public class CombatEvent {
     
     private Player player;
     private Enemy enemy;
-    private JTextArea display;
+    private JTextArea textArea;
     
     public CombatEvent(Player player, Enemy enemy) {
         this.player = player;
@@ -24,24 +24,24 @@ public class CombatEvent {
      * 
      * @return true if combat has ended
      */
-    public boolean ExecuteCombatRound(String command) {
+    public boolean executeCombatRound(String command) {
         
         // Player turn
-        if (!PlayerAction(command)) {
+        if (!playerAction(command)) {
             return false;
         }
-        if (EnemyDead()) {
+        if (enemyDead()) {
             return true;
         }
         
         // Enemy turn
         this.enemy.attackPlayer(this.player);
-        if (PlayerDead()) {
+        if (playerDead()) {
             return true;
         }
         
         // Displays current health situation
-        display.append("Player hp: " + this.player.getHealth() + ", "
+        textArea.append("Player hp: " + this.player.getHealth() + ", "
                 + this.enemy.getName() + " hp: "+ this.enemy.getHealth() + "\n");
         
         return false;
@@ -54,13 +54,13 @@ public class CombatEvent {
      * 
      * @return true if command was accepted
      */
-    public boolean PlayerAction(String command) {
+    public boolean playerAction(String command) {
         
         if (command.equals("attack")) {
-            this.player.AttackEnemy(this.enemy);
+            this.player.attackEnemy(this.enemy);
             return true;
         } else if (command.equals("defend")) {
-            return !this.player.Defend();
+            return !this.player.defend();
         }
         
         return false;
@@ -71,9 +71,9 @@ public class CombatEvent {
      * 
      * @return true if Player is dead
      */
-    public boolean PlayerDead() {
+    public boolean playerDead() {
         if (this.player.getHealth() <= 0) {
-                display.append("You have been killed by " + this.enemy.getName() + "\n\n");
+                textArea.append("You have been killed by " + this.enemy.getName() + "\n\n");
                 return true;
         }
         return false;
@@ -84,10 +84,10 @@ public class CombatEvent {
      * 
      * @return true if Enemy is dead
      */
-    public boolean EnemyDead() {
+    public boolean enemyDead() {
         
         if (this.enemy.getHealth() <= 0) {
-                display.append("You have slain your enemy!\n\n");
+                textArea.append("You have slain your enemy!\n\n");
                 return true;
         }
         return false;
@@ -96,13 +96,13 @@ public class CombatEvent {
     
     //      -- Setters --
     
-    public void SetTextDisplay(JTextArea textDisplay) {
-        display = textDisplay;
+    public void setTextArea(JTextArea textDisplay) {
+        textArea = textDisplay;
     }
     
     //      -- Getters --
     
-    public Enemy GetEnemy() {
+    public Enemy getEnemy() {
         return this.enemy;
     }
 }

@@ -73,12 +73,17 @@ public class InputReader {
         }
     }
     
+    /**
+     * Handles other commands
+     * 
+     * @param command 
+     */
     private void otherCommands(String command) {
         
         if (command.equals("loot")) {
-            this.player.LootItem();
+            this.player.lootItem();
         } else if (command.startsWith("use")) {
-            this.player.UseItem(command);
+            this.player.useItem(command);
         }
     }
     
@@ -91,11 +96,11 @@ public class InputReader {
                 && (this.player.getLocation().getEnemy().getHealth() > 0)) {
             this.battle = new CombatEvent(this.player, this.player.getLocation().getEnemy());
             
-            this.textArea.append(this.battle.GetEnemy().getName() + " appears!\n");
+            this.textArea.append(this.battle.getEnemy().getName() + " appears!\n");
             
             inCombat = true;
             
-            this.battle.SetTextDisplay(this.textArea);
+            this.battle.setTextArea(this.textArea);
         }
     }
     

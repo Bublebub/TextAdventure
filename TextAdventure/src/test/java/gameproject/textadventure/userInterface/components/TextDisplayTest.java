@@ -37,32 +37,34 @@ public class TextDisplayTest {
         ui.run();
         
         player.setTextArea(ui);
+        
+        player.getTextArea().setText("");
     }
     
     @Test
     public void TextDisplayShowsRightTextWhenNotPossibleToMoveEast() {
         this.player.setLocation((Room) this.mapMaker.getGameMap().get("R17"));
         this.player.moveEast();
-        assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n");
+        assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n\n");
     }
     
     @Test
     public void TextDisplayShowsRightTextWhenNotPossibleToMoveSouth() {
         this.player.setLocation((Room) this.mapMaker.getGameMap().get("R17"));
         this.player.moveSouth();
-        assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n");
+        assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n\n");
     }
     
     @Test
     public void TextDisplayShowsRightTextWhenNotPossibleToMoveWest() {
         this.player.setLocation((Room) this.mapMaker.getGameMap().get("R13"));
         this.player.moveWest();
-        assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n");
+        assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n\n");
     }
     
     @Test
     public void TextDisplayShowsRightTextWhenNotPossibleToMoveNorth() {
         this.player.moveNorth();
-        assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n");
+        assertEquals(this.ui.getTextArea().getText(), "Can't move there!\n\n");
     }
 }

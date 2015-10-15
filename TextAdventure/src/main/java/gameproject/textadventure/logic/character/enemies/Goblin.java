@@ -24,86 +24,6 @@ public class Goblin implements Enemy {
     }
     
     /**
-     * Returns Goblins name
-     * 
-     * @return this.name
-     */
-    @Override
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * Returns Goblins health
-     * 
-     * @return this.health
-     */
-    @Override
-    public int getHealth() {
-        return this.health;
-    }
-    
-    /**
-     * Returns Goblins attack value
-     * 
-     * @return this.attack (max damage)
-     */
-    @Override
-    public int getAttack() {
-        return this.attack;
-    }
-
-    /**
-     * Returns Goblins current location
-     * 
-     * @return this.currentLocation
-     */
-    @Override
-    public Room getLocation() {
-        return this.currentLocation;
-    }
-
-    /**
-     * Changes Goblins name
-     * 
-     * @param name 
-     */
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * Changes Goblins health value
-     * 
-     * @param newHealth new health value
-     */
-    @Override
-    public void setHealth(int newHealth) {
-        this.health = newHealth;
-    }
-
-    /**
-     * Changes Goblins attack value
-     * 
-     * @param newAttack new attack value (max damage)
-     */
-    @Override
-    public void setAttack(int newAttack) {
-        this.attack = newAttack;
-    }
-
-    /**
-     * Sets Goblin into new location
-     * 
-     * @param newLocation 
-     */
-    @Override
-    public void setLocation(Room newLocation) {
-        this.currentLocation = newLocation;
-    }
-    
-    /**
      * Damages targeted players health based on attack value
      * 
      * @param player targeted player
@@ -115,6 +35,50 @@ public class Goblin implements Enemy {
         this.damage = random.nextInt(this.attack);
         
         player.setHealth(player.getHealth() - this.damage);
+    }
+    
+    //      -- Getters --
+    
+    @Override
+    public String getName() {
+        return this.name;
+    }
+    
+    @Override
+    public int getHealth() {
+        return this.health;
+    }
+    
+    @Override
+    public int getAttack() {
+        return this.attack;
+    }
+    
+    @Override
+    public Room getLocation() {
+        return this.currentLocation;
+    }
+
+    //      -- Setters --
+    
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public void setHealth(int newHealth) {
+        this.health = newHealth;
+    }
+    
+    @Override
+    public void setAttack(int newAttack) {
+        this.attack = newAttack;
+    }
+    
+    @Override
+    public void setLocation(Room newLocation) {
+        this.currentLocation = newLocation;
     }
     
 }

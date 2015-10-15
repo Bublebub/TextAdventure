@@ -15,7 +15,6 @@ public class InputReaderTest {
         this.reader = new InputReader();
     }
     
-    
     @Test
     public void trimCommandWorks() {
         String test = " TestString ";

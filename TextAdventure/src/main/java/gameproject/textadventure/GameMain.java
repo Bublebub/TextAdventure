@@ -33,7 +33,7 @@ public class GameMain {
         input.setTextArea(ui.getTextArea());
         
         player.setTextArea(ui);
-        player.inventory.SetInventoryDisplay(ui.GetInventoryDisplay());
+        player.inventory.setInventoryDisplay(ui.getInventoryDisplay());
         
         
         

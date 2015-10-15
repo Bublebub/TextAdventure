@@ -21,6 +21,17 @@ public class Troll implements Enemy {
     }
     
     @Override
+    public void attackPlayer(Player player) {
+        Random random = new Random();
+        
+        this.damage = random.nextInt(this.attack);
+        
+        player.setHealth(player.getHealth() - this.damage);
+    }
+    
+    //      -- Getters --
+    
+    @Override
     public String getName() {
         return name;
     }
@@ -39,6 +50,8 @@ public class Troll implements Enemy {
     public Room getLocation() {
         return currentLocation;
     }
+    
+    //      -- Setters --
 
     @Override
     public void setName(String name) {
@@ -58,15 +71,6 @@ public class Troll implements Enemy {
     @Override
     public void setLocation(Room newLocation) {
         this.currentLocation = newLocation;
-    }
-
-    @Override
-    public void attackPlayer(Player player) {
-        Random random = new Random();
-        
-        this.damage = random.nextInt(this.attack);
-        
-        player.setHealth(player.getHealth() - this.damage);
     }
     
 }

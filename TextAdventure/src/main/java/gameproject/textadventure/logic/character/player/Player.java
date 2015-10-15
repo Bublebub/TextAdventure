@@ -40,7 +40,7 @@ public class Player {
      * 
      * @param enemy target
      */
-    public void AttackEnemy(Enemy enemy) {
+    public void attackEnemy(Enemy enemy) {
         Random random = new Random();
         
         this.damage = random.nextInt(this.attack);
@@ -53,7 +53,7 @@ public class Player {
      * 
      * @return true if attack was defended
      */
-    public boolean Defend() {
+    public boolean defend() {
         Random random = new Random();
         
         this.blockChance = random.nextInt(2);
@@ -77,9 +77,9 @@ public class Player {
     /**
      * Gets Item from Room, if it has one
      */
-    public void LootItem() {
+    public void lootItem() {
         if (this.currentLocation.containsItem()) {
-            this.inventory.AddItem(this.currentLocation.getItem().getName(), this.currentLocation.getItem());
+            this.inventory.addItem(this.currentLocation.getItem().getName(), this.currentLocation.getItem());
             this.currentLocation.setItem(null);
         } else {
             textArea.append("Nothing to loot\n");
@@ -91,8 +91,8 @@ public class Player {
      * 
      * @param command tells which item to use
      */
-    public void UseItem(String command) {
-        Item item = this.inventory.SearchItem(command);
+    public void useItem(String command) {
+        Item item = this.inventory.searchItem(command);
         
         if (item != null) {
             item.Use(this);

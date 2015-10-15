@@ -18,14 +18,14 @@ public class TextDisplay {
      * 
      * @param line 
      */
-    public void AddLine(String line) {
+    public void addLine(String line) {
         this.display.append(line);
     }
     
     /**
      * Clears display text
      */
-    public void ClearDisplay() {
+    public void clearDisplay() {
         this.display.setText("");
     }
 

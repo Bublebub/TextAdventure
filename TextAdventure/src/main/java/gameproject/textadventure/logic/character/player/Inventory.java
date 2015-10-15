@@ -24,7 +24,7 @@ public class Inventory {
      * 
      * @return wanted Item
      */
-    public Item SearchItem(String command) {
+    public Item searchItem(String command) {
         String wanted = command.substring(4);
         
         for (String itemName : this.itemMap.keySet()) {
@@ -40,10 +40,10 @@ public class Inventory {
     /**
      * Clears inventory display and adds all inventory Items names to it
      */
-    public void RefreshItemDisplay() {
-        this.itemDisplay.ClearDisplay();
+    public void refreshItemDisplay() {
+        this.itemDisplay.clearDisplay();
         for (String name : this.itemMap.keySet()) {
-            this.itemDisplay.AddLine(name + "\n");
+            this.itemDisplay.addLine(name + "\n");
         }
     }
     
@@ -53,9 +53,9 @@ public class Inventory {
      * @param name Item name
      * @param item 
      */
-    public void AddItem(String name, Item item) {
+    public void addItem(String name, Item item) {
         this.itemMap.put(name, item);
-        this.itemDisplay.AddLine(name + "\n");
+        this.itemDisplay.addLine(name + "\n");
     }
     
     /**
@@ -65,18 +65,18 @@ public class Inventory {
      */
     public void removeItem(String name) {
         this.itemMap.remove(name);
-        RefreshItemDisplay();
+        refreshItemDisplay();
     }
     
     //      -- Setters --
     
-    public void SetInventoryDisplay(TextDisplay display) {
+    public void setInventoryDisplay(TextDisplay display) {
         this.itemDisplay = display;
     }
     
     //      -- Getters --
     
-    public Item GetItem(String name) {
+    public Item getItem(String name) {
         return this.itemMap.get(name);
     }
     

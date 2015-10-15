@@ -27,7 +27,7 @@ public class UserInterface implements Runnable {
     InputReader reader;
     JTextField textField;
     
-    JTextArea textArea, inventory;
+    JTextArea textArea, inventoryArea;
     JScrollPane textAreaScrollPane, inventoryScrollPane;
     TextDisplay textDisplay, inventoryDisplay;
     
@@ -137,14 +137,14 @@ public class UserInterface implements Runnable {
      * @param container JFrame where components are added
      */
     private void createInventory(JFrame container) {
-        inventory = new JTextArea();
-        inventoryScrollPane = new JScrollPane(inventory);
-        inventoryDisplay = new TextDisplay(inventory);
+        inventoryArea = new JTextArea();
+        inventoryScrollPane = new JScrollPane(inventoryArea);
+        inventoryDisplay = new TextDisplay(inventoryArea);
         
         inventoryScrollPane.setBounds(265, 215, 130, 80);
         inventoryScrollPane.setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
         
-        inventory.setLineWrap(true);
+        inventoryArea.setLineWrap(true);
         
         container.add(inventoryScrollPane);
     }
@@ -165,15 +165,15 @@ public class UserInterface implements Runnable {
         
         lootBtn.addActionListener(new ButtonAction("loot", this, this.reader));
         
-        ButtonPositionSetup();
-        AddingButtons(container);
+        buttonPositionSetup();
+        addingButtons(container);
         
     }
     
     /**
      * Assigns buttons position
      */
-    public void ButtonPositionSetup() {
+    public void buttonPositionSetup() {
         eastBtn.setBounds(535, 240, 90, 30);
         westBtn.setBounds(445, 240, 90, 30);
         southBtn.setBounds(490, 270, 90, 30);
@@ -188,7 +188,7 @@ public class UserInterface implements Runnable {
      * 
      * @param container given JFrame
      */
-    public void AddingButtons(JFrame container) {
+    public void addingButtons(JFrame container) {
         container.add(eastBtn);
         container.add(westBtn);
         container.add(southBtn);
@@ -206,7 +206,7 @@ public class UserInterface implements Runnable {
     
     //      -- Getters --
     
-    public Player GetPlayer() {
+    public Player getPlayer() {
         return player;
     }
     
@@ -214,11 +214,11 @@ public class UserInterface implements Runnable {
         return textArea;
     }
     
-    public TextDisplay GetInventoryDisplay() {
+    public TextDisplay getInventoryDisplay() {
         return inventoryDisplay;
     }
     
-    public JLabel GetCommandLabel() {
+    public JLabel getCommandLabel() {
         return commandLabel;
     }
 }
