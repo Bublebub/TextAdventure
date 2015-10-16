@@ -15,15 +15,7 @@ Esineitä käytetään tavaraluettelosta komennolla "use " + esineen nimi.
 Taistelussa pelaaja voi syöttää **vain** "attack" tai "defend" komentoja, kunnes vihollinen kuolee. "attack" vähentää vihollisen hp:ta onnistuessaan, "defend" kumoaa vihollisen hyökkäyksen ja palauttaa pelaajalle 5 hp:ta onnistuessaan (onnistumisen mahdollisuus on 30%).
 
 ##Pelin kartta
-1. [-] [-] [**H/L**] [-] [-] [-] [-]
-2. [-] [-] [**V**] [**H**] [**L**] [-] [-]
-3. [-] [-] [**H**] [-] [**H**] [-] [-]
-4. [-] [-] [**H**] [**H**] [**H**] [**H**] [**H**]
-5. [-] [-] [**H**] [-] [**V/L**] [-] [-]
-6. [**L**] [**V**] [**H**] [**A**] [**H**] [-] [-]
-
-jossa [H] = tyhjä huone, [A] = pelaajan aloituspaikka, [L] = huone jossa on loot:ia ja [V] = huone jossa on vihollinen.
-Kartassa on myös yksi ovi, joka avautuu pohjois-etelä suunnassa kun "Key" esineen käyttää oikeassa kohdassa.
+katso Map.png
 
 ##Pelin loppuminen
 Peli loppuu jos pelaaja kuolee tai onnistuu pääsemään ulos luolasta.
