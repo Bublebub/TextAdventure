@@ -54,3 +54,6 @@ Tekstin tulostus korjattu, nappeja lisätty ja toiminta korjattu, koodia siistit
 
 #15.10.2015
 Ohjelma tehty loppuun, koodia siistitty, luokkakaavio, pit sekä JavaDoc päivitetty. .Jar tiedosto yritetty luoda, siinä vielä ongelma. Aikaa kului n. 6 tuntia. 
+
+#16.10.2015
+Viimeisiä muokkauksia tehty, aikaa kului n. 3-4 tuntia.
