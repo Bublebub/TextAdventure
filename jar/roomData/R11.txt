@@ -1,0 +1,7 @@
+East: Wall
+West: Wall
+South: R15
+North: Wall
+
+Description: You enter a room with a large wooden door on its North wall.
+ Looking South you see a dark hall and hear something moving in the shadows..

@@ -1,0 +1,7 @@
+East: R7
+West: Wall
+South: Wall
+North: R4
+
+Description: You enter a room, where are two hallways: one going North and one going East.
+ Looking South you see a large wooden door with scratch marks on it.

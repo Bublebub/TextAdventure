@@ -1,0 +1,8 @@
+East: R15
+West: R13
+South: Wall
+North: Wall
+
+Description: You arrive at a hallway illuminated by small candles.
+ The floor feels wet and there is a horrible smell coming from the West.
+ Looking East you can see an entrance to cave.

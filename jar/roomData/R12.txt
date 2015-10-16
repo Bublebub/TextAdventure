@@ -1,0 +1,7 @@
+East: Wall
+West: Wall
+South: R17
+North: R8
+
+Description: You arrive at the entrance of a long hallway leading to the South.
+ Looking around you can see small bugs creeping on both walls and a large cave in the North.

@@ -1,0 +1,8 @@
+East: R2
+West: Wall
+South: R4
+North: R0
+
+Description: You enter into stinky room, which appears to be a small kitchen.
+ There are small bones and pieces of flesh spread all over the table located next to the West wall.
+ Looking North you see a small wooden door, to East and South you see entrances to the dungeon.

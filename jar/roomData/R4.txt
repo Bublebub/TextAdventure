@@ -1,0 +1,7 @@
+East: Wall
+West: Wall
+South: R6
+North: R1
+
+Description: You find yourself in another dark hallway, and feel like someone is watching you...
+ You see a faint light coming from the North, and feel a slight breeze from the South.

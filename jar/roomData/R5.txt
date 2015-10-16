@@ -1,0 +1,7 @@
+East: Wall
+West: Wall
+South: R8
+North: R3
+
+Description: Another hallway with small candles lighting up the path.
+ Looking South you see a room filled with sunlight, looking North you see a dark room and hear some water  dripping down against something made from metal...
