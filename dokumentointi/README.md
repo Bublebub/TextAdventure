@@ -1,8 +1,5 @@
 # TextAdventure
 
-##HUOM!
-**Klikkaa kerran tai kaksi pelin ison tekstialueen kohdalta/pohjalta ennen komentojen kirjoittamista, näin sen pitäisi päivittää alue rullaamaan automaattisesti uuden tekstin ilmestyessä (en tiedä miksi).**
-
 ##Pelaajan komennot
 
 ### Liikkuminen
@@ -29,4 +26,4 @@ jossa [H] = tyhjä huone, [A] = pelaajan aloituspaikka, [L] = huone jossa on loo
 Kartassa on myös yksi ovi, joka avautuu pohjois-etelä suunnassa kun "Key" esineen käyttää oikeassa kohdassa.
 
 ##Pelin loppuminen
-Tekeillä...
+Peli loppuu jos pelaaja kuolee tai onnistuu pääsemään ulos luolasta.
