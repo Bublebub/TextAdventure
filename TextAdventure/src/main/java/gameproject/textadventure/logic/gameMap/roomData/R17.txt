@@ -3,5 +3,5 @@ West: R16
 South: Wall
 North: R12
 
-Description: You arrive at a narrow, dark hallway which seems to turn from South to North.
+Description: You arrive at a narrow, dark hallway which seems to turn from West to North.
  It is quite hard to squeeze through, but you might be able to make it to both directions.
